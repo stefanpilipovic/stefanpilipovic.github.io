@@ -1,0 +1,166 @@
+body {
+    font-family: Archivo, sans-serif;
+    max-width: 1200px;
+    padding: 0 128px;
+    /* Remove all padding */
+    margin: auto;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 72px;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+/* Target the first and last elements directly */
+.nav div:first-child a:first-child {
+    padding-left: 0;
+}
+
+.nav div:last-child a:last-child {
+    padding-right: 0;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #767676;
+}
+
+.nav a:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+.symbol {
+    font-family: 'Noto Sans Symbols 2', sans-serif;
+}
+
+.nav-element {
+    padding: 0 16px;
+    font-size: 20px;
+    line-height: 120%;
+    font-weight: 400;
+}
+
+h1 {
+    padding: 104px 0;
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: -2.5px;
+    line-height: 110%;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 120%;
+}
+
+h2 span {
+    color: #767676;
+}
+
+h2 img {
+    width: 240px;
+    height: auto;
+}
+
+.experience img {
+    max-width: 240px;
+    height: auto;
+}
+
+.experience {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0;
+}
+
+.logo {
+    width: 48px;
+    height: 48px;
+}
+
+.company-name {
+    margin-left: 24px;
+    flex: 1;
+    font-size: 20px;
+    line-height: 140%;
+    color: #000000;
+}
+
+.company-sector {
+    font-size: 20px;
+    line-height: 140%;
+    color: #767676;
+}
+
+.location {
+    flex: 1;
+    text-align: center;
+    font-size: 20px;
+    line-height: 140%;
+    color: #000000;
+}
+
+.duration {
+    flex: 1;
+    text-align: right;
+    font-size: 20px;
+    line-height: 140%;
+    color: #767676;
+    letter-spacing: -0.5px;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #767676;
+    border: none;
+    flex: 1;
+    padding: 0;
+    opacity: 0.3;
+    margin: 0;
+}
+
+p {
+    font-size: 24px;
+    line-height: 140%;
+    color: #767676;
+    max-width: 900px;
+    margin: 0;
+}
+
+.work-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 64px auto 0;
+    border-radius: 1rem;
+}
+
+.work-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin-top: 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #767676;
+}
