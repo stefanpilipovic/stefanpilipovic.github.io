@@ -13,19 +13,19 @@
     <link rel="stylesheet" href="style.css">
     <script>
         // Initialize all videos with work-item class when the DOM is fully loaded
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Find all videos with work-item class
             const workVideos = document.querySelectorAll('video.work-item');
-            
+
             // Apply common attributes to each video
-            workVideos.forEach(function(video) {
+            workVideos.forEach(function (video) {
                 video.loop = true;
                 video.autoplay = true;
                 video.muted = true;
                 video.playsInline = true;
-                
+
                 // Add click event to show controls
-                video.onclick = function() {
+                video.onclick = function () {
                     this.controls = true;
                 };
             });
@@ -91,7 +91,8 @@
                 </div>
                 <div style="display: flex;">
                     <div><span>
-                            For over a decade, Stefan has been designing products, systems, strategies, and processes to help clients achieve their business goals and scale across B2B, B2C, and B2B2C.
+                            For over a decade, Stefan has been designing products, systems, strategies, and processes to
+                            help clients achieve their business goals and scale across B2B, B2C, and B2B2C.
                             <br> <br>
                             He’s crafting simple solutions for complex challenges through rapid iteration,
                             early testing, and cross-functional collaboration.</span>
@@ -258,7 +259,7 @@
                 <span class="company-sector">EdTech • B2B</span>
             </div>
             <div class="location">
-                Design Lead • USA • Remote
+                Product Designer • USA • Remote
             </div>
             <div class="duration">
                 Dec 2015 - Jun 2017
@@ -302,14 +303,14 @@
         </p>
 
         <video class="work-item">
-            <source src="assets/RenoFi Funnel Video 1.mp4" type="video/mp4">
+            <source src="assets/RenoFi Video 1.mp4" type="video/mp4">
         </video>
         <span class="work-caption">
             RenoFi product demo video showcasing the user journey
         </span>
 
         <video class="work-item">
-            <source src="assets/RenoFi Funnel Video 2.mp4" type="video/mp4">
+            <source src="assets/RenoFi Video 2.mp4" type="video/mp4">
         </video>
         <span class="work-caption">
             RenoFi product demo video showcasing the user journey
@@ -324,6 +325,22 @@
         <img src="assets/RenoFi Slide 4.svg" alt="RenoFi Slide 1" class="work-item">
 
         <img src="assets/RenoFi Slide 5.svg" alt="RenoFi Slide 1" class="work-item">
+
+        <img src="assets/RenoFi Slide 6.svg" alt="RenoFi Slide 1" class="work-item">
+
+        <video class="work-item">
+            <source src="assets/RenoFi Video 3.mp4" type="video/mp4">
+        </video>
+
+        <img src="assets/RenoFi Slide 7.svg" alt="RenoFi Slide 1" class="work-item">
+
+        <video class="work-item" style="max-height: 450px;">
+            <source src="assets/RenoFi Video 4.mp4" type="video/mp4">
+        </video>
+
+        <video class="work-item">
+            <source src="assets/RenoFi Video 5.mp4" type="video/mp4">
+        </video>
 
     </section>
 
