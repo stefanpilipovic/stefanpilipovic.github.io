@@ -159,6 +159,10 @@ p {
     border-radius: 1rem;
 }
 
+video.work-item {
+    cursor: pointer;
+}
+
 .work-caption {
     display: flex;
     flex-direction: column;
