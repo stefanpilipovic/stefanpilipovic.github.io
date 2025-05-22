@@ -156,7 +156,7 @@ p {
     max-width: 900px;
     height: auto;
     margin: 64px auto 0;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
 }
 
 video.work-item {
