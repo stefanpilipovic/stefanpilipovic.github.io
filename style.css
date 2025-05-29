@@ -164,9 +164,7 @@ video.work-item {
 }
 
 .work-caption {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: block;
     width: 100%;
     margin-top: 16px;
     text-align: center;
