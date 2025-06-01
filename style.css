@@ -227,7 +227,7 @@ video.work-item {
 .browser-content {
     width: 100%;
     border: #d1d1d1 1px solid;
-    border-radius: 0 0 12px 12px;
+    border-radius: 0 0 0.5rem 0.5rem;
     margin-top: -1px;
     box-sizing: border-box;
     padding: 0;
@@ -292,6 +292,7 @@ video.work-item {
 .slide {
     width: 100%;
     display: none;
+    border-radius: 0.5rem;
 }
 
 .slide:first-child {
@@ -307,7 +308,7 @@ video.work-item {
     cursor: pointer;
     border: 3px solid transparent;
     /* Transparent border to reserve space */
-    border-radius: 8px;
+    border-radius: 0.5rem;
     /* Same border-radius as active state */
     opacity: 1;
     /* Default opacity for inactive thumbnails */
