@@ -32,6 +32,131 @@
             });
         });
     </script>
+
+    <script>
+        // Simplified slideshow script for multiple slideshows
+        document.addEventListener('DOMContentLoaded', function () {
+            // Find all slideshow containers
+            const slideshowContainers = document.querySelectorAll('.slideshow-container');
+
+            // Create slideshow objects but don't start them yet
+            const slideshows = [];
+
+            slideshowContainers.forEach(function (container, index) {
+                // Initialize the slideshow structure
+                const slideshow = {
+                    container: container,
+                    slides: container.querySelectorAll('.slide'),
+                    thumbnails: container.querySelectorAll('.slideshow-thumbnail'),
+                    currentIndex: 0,
+                    interval: null,
+                    isActive: false
+                };
+
+                // Show the first slide
+                showSlide(slideshow, 0);
+
+                // Add click event listeners to thumbnails
+                Array.from(slideshow.thumbnails).forEach(function (thumbnail, index) {
+                    thumbnail.addEventListener('click', function () {
+                        showSlide(slideshow, index);
+                        if (slideshow.isActive) {
+                            resetSlideshow(slideshow);
+                        }
+                    });
+                });
+
+                // Add to slideshows array
+                slideshows.push(slideshow);
+
+                // Set up intersection observer for this slideshow
+                setupIntersectionObserver(slideshow);
+            });
+
+            // Function to set up intersection observer for a slideshow
+            function setupIntersectionObserver(slideshow) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Start slideshow immediately if it's not already active
+                            if (!slideshow.isActive) {
+                                startSlideshow(slideshow);
+                                slideshow.isActive = true;
+                            }
+                        } else {
+                            // Stop slideshow when not in view
+                            if (slideshow.isActive) {
+                                clearInterval(slideshow.interval);
+                                slideshow.isActive = false;
+                            }
+                        }
+                    });
+                }, {
+                    threshold: 0.3 // Trigger when 30% of the slideshow is visible
+                });
+
+                // Start observing the slideshow container
+                observer.observe(slideshow.container);
+            }
+
+            // Function to show a specific slide
+            function showSlide(slideshow, index) {
+                // Hide all slides
+                Array.from(slideshow.slides).forEach(function (slide) {
+                    slide.style.display = 'none';
+                });
+
+                // Reset all thumbnails
+                Array.from(slideshow.thumbnails).forEach(function (thumb) {
+                    thumb.classList.remove('active');
+                });
+
+                // Show the current slide
+                if (slideshow.slides[index]) {
+                    slideshow.slides[index].style.display = 'block';
+                }
+
+                // Highlight the current thumbnail
+                if (slideshow.thumbnails[index]) {
+                    slideshow.thumbnails[index].classList.add('active');
+                }
+
+                // Update the current index
+                slideshow.currentIndex = index;
+            }
+
+            // Function to advance to the next slide
+            function nextSlide(slideshow) {
+                let nextIndex = slideshow.currentIndex + 1;
+
+                if (nextIndex >= slideshow.slides.length) {
+                    nextIndex = 0;
+                }
+
+                showSlide(slideshow, nextIndex);
+            }
+
+            // Function to start the automatic slideshow
+            function startSlideshow(slideshow) {
+                // Clear any existing interval first
+                if (slideshow.interval) {
+                    clearInterval(slideshow.interval);
+                }
+
+                // Set a new interval
+                slideshow.interval = setInterval(function () {
+                    nextSlide(slideshow);
+                }, 2000);
+            }
+
+            // Function to reset the slideshow timer
+            function resetSlideshow(slideshow) {
+                clearInterval(slideshow.interval);
+                startSlideshow(slideshow);
+            }
+        });
+    </script>
+
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -238,7 +363,7 @@
 
     </section>
 
-    <!-- <section id="work">
+    <section id="work">
         <h2>
             <div style="margin-top: 120px; margin-bottom: 40px;">
                 Work
@@ -250,60 +375,142 @@
         </p>
 
         <video class="work-item">
-            <source src="assets/RenoFi Video 1.mp4" type="video/mp4">
+            <source src="assets/RenoFi/RenoFi Video 1.mp4" type="video/mp4">
         </video>
         <span class="work-caption">
-            This redesign improved total conversion rate by more than <b>3.5 times</b>. See the <u>message from my dev
-                team lead (Pawel)</u>.
-
+            <i>Result:</i> Increased total conversion rate by <b>3.6 times</b>
         </span>
 
         <video class="work-item">
-            <source src="assets/RenoFi Video 2.mp4" type="video/mp4">
+            <source src="assets/RenoFi/RenoFi Video 2.mp4" type="video/mp4">
         </video>
         <span class="work-caption">
-            RenoFi product demo video showcasing the user journey
+            <i>Result:</i> Average sales call time <b>reduced by 67%</b>, and <b>increased the conversion rate by
+                1.12%</b>
         </span>
 
-        <img src="assets/RenoFi Secure 1.svg" alt="RenoFi Secure 1" class="work-item">
+        <div class="slideshow-container work-item" style="max-width:900px; margin:64px auto 0;">
+            <img class="slide" src="assets/RenoFi/RenoFi Secure 1.svg" style="width:100%;">
+            <img class="slide" src="assets/RenoFi/RenoFi Secure 2.svg" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi Secure 3.svg" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi Secure 4.svg" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi Secure 5.svg" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi Secure 6.svg" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi Secure 7.svg" style="width:100%; display:none;">
 
-        <img src="assets/RenoFi Secure 2.svg" alt="RenoFi Secure 1" class="work-item">
+            <div class="thumbnail-container" style="text-align:center; margin-top:20px;">
+                <div style="display:inline-block;">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Secure 1.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Secure 2.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Secure 3.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Secure 4.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Secure 5.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Secure 6.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Secure 7.svg">
+                </div>
+            </div>
+        </div>
 
-        <img src="assets/RenoFi Secure 3.svg" alt="RenoFi Secure 1" class="work-item">
-
-        <img src="assets/RenoFi Secure 4.svg" alt="RenoFi Secure 1" class="work-item">
-
-        <img src="assets/RenoFi Secure 5.svg" alt="RenoFi Secure 1" class="work-item">
-
-        <img src="assets/RenoFi Secure 6.svg" alt="RenoFi Secure 1" class="work-item">
-
-        <video class="work-item">
-            <source src="assets/RenoFi Video 3.mp4" type="video/mp4">
-        </video>
-
-        <img src="assets/RenoFi Secure 7.svg" alt="RenoFi Slide 1" class="work-item">
+        <span class="work-caption">
+            <i>Result:</i> Enabled information and document providing and <b>increased application completion by 42%</b>
+            during the first user session
+        </span>
 
         <video class="work-item" style="max-height: 450px;">
-            <source src="assets/RenoFi Video 4.mp4" type="video/mp4">
+            <source src="assets/RenoFi/RenoFi Video 4.mp4" type="video/mp4">
         </video>
+
+        <!-- <img src="assets/RenoFi/RenoFi Secure 5.svg" alt="RenoFi Secure 1" class="work-item"> -->
+
+        <img src="assets/RenoFi/RenoFi Secure 8.svg" alt="RenoFi Secure 1" class="work-item">
 
         <video class="work-item">
-            <source src="assets/RenoFi Video 5.mp4" type="video/mp4">
+            <source src="assets/RenoFi/RenoFi Video 3.mp4" type="video/mp4">
         </video>
 
-        <img src="assets/RenoFi Blueprint 1.svg" alt="RenoFi Blueprint 1" class="work-item">
+        <img src="assets/RenoFi/RenoFi Secure 9.svg" alt="RenoFi Slide 1" class="work-item">
 
-        <img src="assets/RenoFi Blueprint 2.svg" alt="RenoFi Blueprint 2" class="work-item">
 
-        <img src="assets/RenoFi Blueprint 3.svg" alt="RenoFi Blueprint 3" class="work-item">
+        <div class="slideshow-container work-item" style="max-width:900px; margin:64px auto 0;">
+            <img class="slide" src="assets/RenoFi/RenoFi Blueprint 1.svg" style="width:100%;">
+            <img class="slide" src="assets/RenoFi/RenoFi Blueprint 2.svg" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi Blueprint 3.svg" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi Blueprint 4.svg" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi Blueprint 5.svg" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi Blueprint 6.svg" style="width:100%; display:none;">
 
-        <img src="assets/RenoFi Blueprint 4.svg" alt="RenoFi Blueprint 4" class="work-item">
-
-        <img src="assets/RenoFi Blueprint 5.svg" alt="RenoFi Blueprint 5" class="work-item">
-
-        <div style="overflow-y: scroll; height: 400px; margin-top: 40px;">
-            <img src="assets/RenoFi Blueprint 5.svg" alt="RenoFi Blueprint 5" class="work-item">
+            <div class="thumbnail-container" style="text-align:center; margin-top:20px;">
+                <div style="display:inline-block;">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Blueprint 1.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Blueprint 2.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Blueprint 3.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Blueprint 4.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Blueprint 5.svg">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi Blueprint 6.svg">
+                </div>
+            </div>
         </div>
+
+        <span class="work-caption">
+            <i>Result:</i> Total renovation underwriting <b>process completion cut down from 90 days to
+                under 30 days</b>
+        </span>
+
+        <video class="work-item">
+            <source src="assets/RenoFi/RenoFi Video 5.mp4" type="video/mp4">
+        </video>
+
+        <div class="work-item reviews-container">
+            <div class="reviews-wrapper">
+                <a href="https://maps.app.goo.gl/q4uQizz6maZZ63zh6" target="_blank">
+                    <img src="assets/RenoFi/RenoFi Review 1.png" alt="RenoFi Review 1">
+                </a>
+                <a href="https://maps.app.goo.gl/z1F3Hcuv41Yta2DY8" target="_blank">
+                    <img src="assets/RenoFi/RenoFi Review 2.png" alt="RenoFi Review 2">
+                </a>
+                <a href="https://maps.app.goo.gl/EV6oahqR7vwTZ5ibA" target="_blank">
+                    <img src="assets/RenoFi/RenoFi Review 3.png" alt="RenoFi Review 3">
+                </a>
+                <a href="https://maps.app.goo.gl/Gemb7vVGxydjafJr9" target="_blank">
+                    <img src="assets/RenoFi/RenoFi Review 4.png" alt="RenoFi Review 4">
+                </a>
+                <a href="https://maps.app.goo.gl/gbrK3fDPsn3X4yc16" target="_blank">
+                    <img src="assets/RenoFi/RenoFi Review 5.png" alt="RenoFi Review 5">
+                </a>
+                <a href="https://maps.app.goo.gl/ZwqzbpYAUidKKf5f9" target="_blank">
+                    <img src="assets/RenoFi/RenoFi Review 6.png" alt="RenoFi Review 6">
+                </a>
+            </div>
+        </div>
+
+        <span class="work-caption">
+            User experience testimonials from RenoFi's customers, showcasing the impact of design on their
+            renovation loan journey
+        </span>
+
+        <div class="slideshow-container work-item" style="max-width:900px; margin:64px auto 0;">
+            <img class="slide" src="assets/RenoFi/RenoFi BTS 1.png" style="width:100%;">
+            <img class="slide" src="assets/RenoFi/RenoFi BTS 2.png" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi BTS 3.png" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi BTS 4.png" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi BTS 5.png" style="width:100%; display:none;">
+            <img class="slide" src="assets/RenoFi/RenoFi BTS 6.png" style="width:100%; display:none;">
+
+            <div class="thumbnail-container" style="text-align:center; margin-top:20px;">
+                <div style="display:inline-block;">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi BTS 1.png">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi BTS 2.png">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi BTS 3.png">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi BTS 4.png">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi BTS 5.png">
+                    <img class="slideshow-thumbnail" src="assets/RenoFi/RenoFi BTS 6.png">
+                </div>
+            </div>
+        </div>
+        
+        <span class="work-caption">
+            Behind the scenes of design process, from user research, iterations, to final product
+        </span>
 
     </section>
 
@@ -313,7 +520,27 @@
             through product innovation,
             design, and scaling strategies.
         </p>
-    </section> -->
+
+        <div class="browser-window">
+            <div class="browser-header">
+                <div class="window-control window-control-close tooltip">
+                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                </div>
+                <div class="window-control window-control-minimize tooltip">
+                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                </div>
+                <div class="window-control window-control-expand tooltip">
+                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                </div>
+            </div>
+            <div class="browser-content">
+                <video autoplay loop muted playsinline style="max-width: 900px; width: 100%;">
+                    <source src="assets/ReaQta/ReaQta Homepage Hero.mp4" type="video/mp4">
+                </video><img src="assets/ReaQta/ReaQta Homepage Bottom.svg" alt="RenoFi Blueprint 4">
+            </div>
+        </div>
+
+    </section>
 
 
 </body>
