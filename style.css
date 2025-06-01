@@ -165,9 +165,212 @@ video.work-item {
 
 .work-caption {
     display: block;
+    max-width: 900px;
+    margin: auto;
     width: 100%;
     margin-top: 16px;
     text-align: center;
     font-size: 14px;
     color: #767676;
+}
+
+/* Browser window mockup styles */
+.browser-window {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 64px auto 0;
+    box-sizing: border-box;
+}
+
+.browser-header {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    background-color: #eaeaea;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-sizing: border-box;
+    border: #d1d1d1 1px solid;
+    width: 100%;
+}
+
+.window-control {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-left: 8px;
+    box-sizing: border-box;
+}
+
+.window-control:first-child {
+    margin-left: 14px;
+}
+
+.window-control-close {
+    background-color: #FF6058;
+    border: 1px solid #E14942;
+}
+
+.window-control-minimize {
+    background-color: #FFC130;
+    border: 1px solid #E1A325;
+}
+
+.window-control-expand {
+    background-color: #27CA40;
+    border: 1px solid #3EAF3F;
+}
+
+.browser-content {
+    width: 100%;
+    border: #d1d1d1 1px solid;
+    border-radius: 0 0 12px 12px;
+    margin-top: -1px;
+    box-sizing: border-box;
+    padding: 0;
+    max-height: 610px;
+    overflow-y: auto;
+}
+
+.browser-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: -4px;
+}
+
+
+/* Tooltip*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(59, 59, 59);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+    font-size: 14px;
+    word-spacing: normal;
+    /* Ensure proper spacing between words and emojis */
+    white-space: normal;
+    /* Allow normal text wrapping */
+}
+
+
+/* Bottom arrow */
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(59, 59, 59) transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/* Slideshow styles */
+.slide {
+    width: 100%;
+    display: none;
+}
+
+.slide:first-child {
+    display: block;
+}
+
+.slideshow-thumbnail {
+    box-sizing: border-box;
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+    margin: 0 4px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    /* Transparent border to reserve space */
+    border-radius: 8px;
+    /* Same border-radius as active state */
+    opacity: 1;
+    /* Default opacity for inactive thumbnails */
+}
+
+/* Hover state for thumbnails */
+.slideshow-thumbnail:hover {
+    opacity: 1;
+    border-color: rgba(76, 76, 76, 0.3);
+    /* Semi-transparent red border */
+}
+
+/* Active thumbnail styles */
+.slideshow-thumbnail.active {
+    border: 3px solid #E30000;
+    /* Red border for active thumbnail */
+    opacity: 1;
+    /* Full opacity for active thumbnail */
+}
+
+/* Reviews container styles */
+.reviews-container {
+    /* work-item class already provides max-width: 900px and other common styles */
+}
+
+.reviews-wrapper {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.reviews-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px;
+    border: 1px solid #e7e7e7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.reviews-wrapper img:hover {
+    transform: translateY(-1px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 8px;
+}
+
+@media (max-width: 768px) {
+    /* On smaller screens, switch to 2 columns */
+    .reviews-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    /* On very small screens, switch to 1 column */
+    .reviews-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
 }
