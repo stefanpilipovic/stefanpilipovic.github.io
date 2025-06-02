@@ -60,7 +60,8 @@
                 Array.from(slideshow.thumbnails).forEach(function (thumbnail, index) {
                     thumbnail.addEventListener('click', function () {
                         showSlide(slideshow, index);
-                        if (slideshow.isActive) {
+                        // Only reset slideshow timer if it's active and not a no-autoplay slideshow
+                        if (slideshow.isActive && !slideshow.container.classList.contains('no-autoplay')) {
                             resetSlideshow(slideshow);
                         }
                     });
@@ -78,9 +79,12 @@
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
-                            // Start slideshow immediately if it's not already active
-                            if (!slideshow.isActive) {
+                            // Start slideshow immediately if it's not already active and doesn't have no-autoplay class
+                            if (!slideshow.isActive && !slideshow.container.classList.contains('no-autoplay')) {
                                 startSlideshow(slideshow);
+                                slideshow.isActive = true;
+                            } else if (!slideshow.isActive && slideshow.container.classList.contains('no-autoplay')) {
+                                // For no-autoplay slideshows, just mark as active but don't start autoplay
                                 slideshow.isActive = true;
                             }
                         } else {
@@ -370,7 +374,8 @@
             </div>
         </h2>
         <p>
-            Designing end-to-end experiences for borrowers, lenders and internal teams to create a unified, seamless renovation loan journey.
+            Designing end-to-end experiences for borrowers, lenders and internal teams to create a unified, seamless
+            renovation loan journey.
         </p>
 
         <video class="work-item">
@@ -411,15 +416,13 @@
         </div>
 
         <span class="work-caption">
-            <i>Result:</i> Enabled information and document providing and <b>increased application completion by 42%</b>
+            <i>Result:</i> Enabled information and document capture and <b>increased application completion by 42%</b>
             during the first user session
         </span>
 
         <video class="work-item" style="max-height: 450px;">
             <source src="assets/RenoFi/RenoFi Video 4.mp4" type="video/mp4">
         </video>
-
-        <!-- <img src="assets/RenoFi/RenoFi Secure 5.svg" alt="RenoFi Secure 1" class="work-item"> -->
 
         <img src="assets/RenoFi/RenoFi Secure 8.svg" alt="RenoFi Secure 1" class="work-item">
 
@@ -515,36 +518,54 @@
 
     <section>
         <p style="margin-top: 120px;">
-            Designing everything at RenoFi, helped secure multiple successful investor fundings from $750k to $32.7M
-            through product innovation,
-            design, and scaling strategies.
+            ReaQta is a cybersecurity company that provides advanced endpoint protection and detection solutions.
         </p>
 
-        <div class="browser-window">
-            <div class="browser-header">
-                <div class="window-control window-control-close tooltip">
-                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+        <div class="slideshow-container work-item no-autoplay" style="max-width:900px; margin:64px auto 0;">
+            <div class="browser-window">
+                <div class="browser-header">
+                    <div class="window-control window-control-close tooltip">
+                        <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                    </div>
+                    <div class="window-control window-control-minimize tooltip">
+                        <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                    </div>
+                    <div class="window-control window-control-expand tooltip">
+                        <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                    </div>
                 </div>
-                <div class="window-control window-control-minimize tooltip">
-                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
-                </div>
-                <div class="window-control window-control-expand tooltip">
-                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                <div class="browser-content">
+                    <div class="slide">
+                        <video autoplay loop muted playsinline style="max-width: 900px; width: 100%;">
+                            <source src="assets/ReaQta/ReaQta Website 1 Top.mp4" type="video/mp4">
+                        </video>
+                        <img src="assets/ReaQta/ReaQta Website 1 Bottom.svg" alt="RenoFi Blueprint 4" style="width:100%;">
+                    </div>
+                    <img class="slide" src="assets/ReaQta/ReaQta Website 2.svg" style="width:100%; display:none;">
+                    <img class="slide" src="assets/ReaQta/ReaQta Website 3.svg" style="width:100%; display:none;">
+                    <img class="slide" src="assets/ReaQta/ReaQta Website 4.svg" style="width:100%; display:none;">
+                    <img class="slide" src="assets/ReaQta/ReaQta Website 5.svg" style="width:100%; display:none;">
                 </div>
             </div>
-            <div class="browser-content">
-                <video autoplay loop muted playsinline style="max-width: 900px; width: 100%;">
-                    <source src="assets/ReaQta/ReaQta Website 1 Top.mp4" type="video/mp4">
-                </video><img src="assets/ReaQta/ReaQta Website 1 Bottom.svg" alt="RenoFi Blueprint 4">
+            
+            <div class="thumbnail-container" style="text-align:center; margin-top:20px;">
+                <div style="display:inline-block;">
+                    <img class="slideshow-thumbnail active" src="assets/ReaQta/ReaQta Website 1 Bottom.svg">
+                    <img class="slideshow-thumbnail" src="assets/ReaQta/ReaQta Website 2.svg">
+                    <img class="slideshow-thumbnail" src="assets/ReaQta/ReaQta Website 3.svg">
+                    <img class="slideshow-thumbnail" src="assets/ReaQta/ReaQta Website 4.svg">
+                    <img class="slideshow-thumbnail" src="assets/ReaQta/ReaQta Website 5.svg">
+                </div>
             </div>
         </div>
 
-                <video class="work-item">
+        <video class="work-item">
             <source src="assets/ReaQta/ReaQta Video 3.mp4" type="video/mp4">
         </video>
 
+        <img src="assets/ReaQta/ReaQta Website Mobile.svg" alt="ReaQta Website Mobile" class="work-item">
 
-                <video class="work-item">
+        <video class="work-item">
             <source src="assets/ReaQta/ReaQta Video 4.mp4" type="video/mp4">
         </video>
 
@@ -605,3 +626,24 @@
 </body>
 
 </html>
+
+
+
+        <!-- <div class="browser-window">
+            <div class="browser-header">
+                <div class="window-control window-control-close tooltip">
+                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                </div>
+                <div class="window-control window-control-minimize tooltip">
+                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                </div>
+                <div class="window-control window-control-expand tooltip">
+                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                </div>
+            </div>
+            <div class="browser-content">
+                <video autoplay loop muted playsinline style="max-width: 900px; width: 100%;">
+                    <source src="assets/ReaQta/ReaQta Website 1 Top.mp4" type="video/mp4">
+                </video><img src="assets/ReaQta/ReaQta Website 1 Bottom.svg" alt="RenoFi Blueprint 4">
+            </div>
+        </div> -->
