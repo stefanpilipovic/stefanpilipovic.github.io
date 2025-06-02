@@ -340,7 +340,7 @@ video.work-item {
 .reviews-wrapper {
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 20px;
     width: 100%;
@@ -350,10 +350,9 @@ video.work-item {
 .reviews-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
     border-radius: 8px;
+    border: 1px solid #f1f1f1;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px;
-    border: 1px solid #e7e7e7;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
