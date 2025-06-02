@@ -301,6 +301,8 @@ video.work-item {
 
 .slideshow-thumbnail {
     box-sizing: border-box;
+    object-position: top;
+    /* Align content to the top */
     width: 100px;
     height: auto;
     max-height: 70px;
@@ -362,6 +364,7 @@ video.work-item {
 }
 
 @media (max-width: 768px) {
+
     /* On smaller screens, switch to 2 columns */
     .reviews-wrapper {
         grid-template-columns: repeat(2, 1fr);
@@ -370,6 +373,7 @@ video.work-item {
 }
 
 @media (max-width: 480px) {
+
     /* On very small screens, switch to 1 column */
     .reviews-wrapper {
         grid-template-columns: 1fr;
