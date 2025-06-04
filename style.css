@@ -351,7 +351,7 @@ video.work-item {
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    border: 1px solid #f1f1f1;
+    border: 1px solid #e7e7e7;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
