@@ -1,0 +1,41 @@
+/* ABOUT START */
+
+.about {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 120%;
+}
+
+.about__title {
+    margin-bottom: 40px;
+}
+
+.about__content {
+    display: flex;
+}
+
+.about__text--wrapper {
+    color: #767676;
+}
+
+.about__text {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 120%;
+}
+
+.about__text:first-child {
+    margin-bottom: 40px;
+}
+
+.about__image--wrapper {
+    margin-left: 100px;
+}
+
+.about__image {
+    width: 240px;
+    height: auto;
+}
+/* ABOUT END */

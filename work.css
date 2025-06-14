@@ -1,0 +1,99 @@
+/* WORK START */
+
+.work__title {
+    margin-top: 120px;
+    margin-bottom: 24px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.work__description {
+    font-size: 24px;
+    line-height: 140%;
+    color: #767676;
+    max-width: 900px;
+    margin: 0;
+}
+
+.work__project--block {
+    max-width: 900px;
+    margin: 64px auto 0;
+}
+
+.work__project--block--image,
+.work__project--block--video {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: auto 0;
+    border-radius: 0.5rem;
+}
+
+.work__project--block--video {
+ cursor: pointer;
+}
+
+.work__project--block--video--slideshow,
+.work__project--block--image--slideshow {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: auto 0;
+    border-radius: 0;
+}
+
+.work__project--block--reviews {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+}
+
+.work__project--block--reviews--card {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid #e7e7e7;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.work__project--block--reviews--card:hover {
+    transform: translateY(-1px);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 8px;
+}
+
+.work__project--caption {
+    display: block;
+    max-width: 900px;
+    margin: auto;
+    width: 100%;
+    margin-top: 16px;
+    text-align: center;
+    font-size: 14px;
+    color: #767676;
+}
+
+@media (max-width: 768px) {
+
+    /* On smaller screens, switch to 2 columns */
+    .work__project--block--reviews {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* On very small screens, switch to 1 column */
+    .work__project--block--reviews {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+    }
+}
+
+/* WORK END */
