@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="heading.css">
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="experience.css">
@@ -33,22 +33,29 @@
 </script>
 
 <body>
-    <nav class="navigation">
-        <div class="navigation__links--wrapper--left">
-            <a href="#about" class="navigation__link">About</a>
-            <a href="#experience" class="navigation__link">Experience</a>
-            <a href="#work" class="navigation__link">Work</a>
+    <header class="header">
+        <div class="header__top">
+            <p class="header__top--text">Stefan Pilipović</p>
+            <p class="header__top--text">Product Design</p>
         </div>
-        <div class="navigation__links--wrapper--right">
-            <a href="https://www.linkedin.com/in/spilipovic/" target="_blank" class="navigation__link"><span
-                    class="navigation__links--symbol">&#x1F855;</span> Linkedin</a>
-            <a href="https://www.dribbble.com/caki/" target="_blank" class="navigation__link"><span
-                    class="navigation__links--symbol">&#129107;</span> Resume</a>
-            <a href="mailto:stefan.pilipovic@gmail.com" class="navigation__link"><span
-                    class="navigation__links--symbol">&#11194;</span>
-                Email</a>
+        <div class="header__bottom">
+            <div class="header__links--wrapper--left">
+                <a href="#about" class="header__link">About</a>
+                <a href="#experience" class="header__link">Experience</a>
+                <a href="#work" class="header__link">Work</a>
+            </div>
+
+            <div class="header__links--wrapper--right">
+                <a href="https://www.linkedin.com/in/spilipovic/" target="_blank" class="header__link"><span
+                        class="header__links--symbol">&#x1F855;</span> Linkedin</a>
+                <a href="https://www.dribbble.com/caki/" target="_blank" class="header__link"><span
+                        class="header__links--symbol">&#129107;</span> Resume</a>
+                <a href="mailto:stefan.pilipovic@gmail.com" class="header__link"><span
+                        class="header__links--symbol">&#11194;</span>
+                    Email</a>
+            </div>
         </div>
-    </nav>
+    </header>
 
 
     <h1 class="heading">Stefan Pilipović is a product designer crafting human-centered digital experiences since 2010.
@@ -135,7 +142,7 @@
                 </div>
                 <div class="experience__company--name--wrapper">
                     <span class="experience__company--name">ReaQta (acquired by <img src="assets/ibm.svg" alt="IBM Logo"
-                            class="ibm__logo">)</span>
+                            class="ibm-logo">)</span>
                     <span class="experience__company--sector">Cybersecurity • B2B</span>
                 </div>
             </div>
@@ -243,22 +250,36 @@
         </span>
 
         <div class="slideshow">
-            <img class="slideshow__slide" src="assets/renofi/renofi_secure_1.webp" alt="RenoFi secure application interface screen 1">
-            <img class="slideshow__slide" src="assets/renofi/renofi_secure_2.webp" alt="RenoFi secure application interface screen 2">
-            <img class="slideshow__slide" src="assets/renofi/renofi_secure_3.webp" alt="RenoFi secure application interface screen 3">
-            <img class="slideshow__slide" src="assets/renofi/renofi_secure_4.webp" alt="RenoFi secure application interface screen 4">
-            <img class="slideshow__slide" src="assets/renofi/renofi_secure_5.webp" alt="RenoFi secure application interface screen 5">
-            <img class="slideshow__slide" src="assets/renofi/renofi_secure_6.webp" alt="RenoFi secure application interface screen 6">
-            <img class="slideshow__slide" src="assets/renofi/renofi_secure_7.webp" alt="RenoFi secure application interface screen 7">
+            <img class="slideshow__slide" src="assets/renofi/renofi_secure_1.webp"
+                alt="RenoFi secure application interface screen 1">
+            <img class="slideshow__slide" src="assets/renofi/renofi_secure_2.webp"
+                alt="RenoFi secure application interface screen 2">
+            <img class="slideshow__slide" src="assets/renofi/renofi_secure_3.webp"
+                alt="RenoFi secure application interface screen 3">
+            <img class="slideshow__slide" src="assets/renofi/renofi_secure_4.webp"
+                alt="RenoFi secure application interface screen 4">
+            <img class="slideshow__slide" src="assets/renofi/renofi_secure_5.webp"
+                alt="RenoFi secure application interface screen 5">
+            <img class="slideshow__slide" src="assets/renofi/renofi_secure_6.webp"
+                alt="RenoFi secure application interface screen 6">
+            <img class="slideshow__slide" src="assets/renofi/renofi_secure_7.webp"
+                alt="RenoFi secure application interface screen 7">
 
             <div class="thumbnail--wrapper" style="text-align:center; margin-top:20px;">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_1.webp" alt="Thumbnail for RenoFi secure screen 1">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_2.webp" alt="Thumbnail for RenoFi secure screen 2">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_3.webp" alt="Thumbnail for RenoFi secure screen 3">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_4.webp" alt="Thumbnail for RenoFi secure screen 4">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_5.webp" alt="Thumbnail for RenoFi secure screen 5">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_6.webp" alt="Thumbnail for RenoFi secure screen 6">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_7.webp" alt="Thumbnail for RenoFi secure screen 7">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_1.webp"
+                    alt="Thumbnail for RenoFi secure screen 1">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_2.webp"
+                    alt="Thumbnail for RenoFi secure screen 2">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_3.webp"
+                    alt="Thumbnail for RenoFi secure screen 3">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_4.webp"
+                    alt="Thumbnail for RenoFi secure screen 4">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_5.webp"
+                    alt="Thumbnail for RenoFi secure screen 5">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_6.webp"
+                    alt="Thumbnail for RenoFi secure screen 6">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_secure_7.webp"
+                    alt="Thumbnail for RenoFi secure screen 7">
             </div>
         </div>
 
@@ -280,7 +301,8 @@
         </span>
 
         <div class="work__project--block">
-            <img src="assets/renofi/renofi_secure_8.webp" alt="RenoFi mobile responsive design interface" class="work__project--block--image">
+            <img src="assets/renofi/renofi_secure_8.webp" alt="RenoFi mobile responsive design interface"
+                class="work__project--block--image">
         </div>
 
         <span class="work__project--caption">
@@ -299,7 +321,8 @@
         </span>
 
         <div class="work__project--block">
-            <img src="assets/renofi/renofi_secure_9.webp" alt="RenoFi communication strategy diagram" class="work__project--block--image">
+            <img src="assets/renofi/renofi_secure_9.webp" alt="RenoFi communication strategy diagram"
+                class="work__project--block--image">
         </div>
 
         <span class="work__project--caption">
@@ -308,20 +331,32 @@
         </span>
 
         <div class="slideshow work__project--block--content">
-            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_1.webp" alt="RenoFi blueprint design screen 1">
-            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_2.webp" alt="RenoFi blueprint design screen 2">
-            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_3.webp" alt="RenoFi blueprint design screen 3">
-            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_4.webp" alt="RenoFi blueprint design screen 4">
-            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_5.webp" alt="RenoFi blueprint design screen 5">
-            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_6.webp" alt="RenoFi blueprint design screen 6">
+            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_1.webp"
+                alt="RenoFi blueprint design screen 1">
+            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_2.webp"
+                alt="RenoFi blueprint design screen 2">
+            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_3.webp"
+                alt="RenoFi blueprint design screen 3">
+            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_4.webp"
+                alt="RenoFi blueprint design screen 4">
+            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_5.webp"
+                alt="RenoFi blueprint design screen 5">
+            <img class="slideshow__slide" src="assets/renofi/renofi_blueprint_6.webp"
+                alt="RenoFi blueprint design screen 6">
 
             <div class="slideshow__thumbnail--wrapper">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_1.webp" alt="Thumbnail for RenoFi blueprint screen 1">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_2.webp" alt="Thumbnail for RenoFi blueprint screen 2">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_3.webp" alt="Thumbnail for RenoFi blueprint screen 3">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_4.webp" alt="Thumbnail for RenoFi blueprint screen 4">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_5.webp" alt="Thumbnail for RenoFi blueprint screen 5">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_6.webp" alt="Thumbnail for RenoFi blueprint screen 6">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_1.webp"
+                    alt="Thumbnail for RenoFi blueprint screen 1">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_2.webp"
+                    alt="Thumbnail for RenoFi blueprint screen 2">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_3.webp"
+                    alt="Thumbnail for RenoFi blueprint screen 3">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_4.webp"
+                    alt="Thumbnail for RenoFi blueprint screen 4">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_5.webp"
+                    alt="Thumbnail for RenoFi blueprint screen 5">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_blueprint_6.webp"
+                    alt="Thumbnail for RenoFi blueprint screen 6">
             </div>
         </div>
 
@@ -367,20 +402,32 @@
         </span>
 
         <div class="slideshow work__project--block--content">
-            <img class="slideshow__slide" src="assets/renofi/renofi_bts_1.webp" alt="RenoFi behind the scenes design process image 1">
-            <img class="slideshow__slide" src="assets/renofi/renofi_bts_2.webp" alt="RenoFi behind the scenes design process image 2">
-            <img class="slideshow__slide" src="assets/renofi/renofi_bts_3.webp" alt="RenoFi behind the scenes design process image 3">
-            <img class="slideshow__slide" src="assets/renofi/renofi_bts_4.webp" alt="RenoFi behind the scenes design process image 4">
-            <img class="slideshow__slide" src="assets/renofi/renofi_bts_5.webp" alt="RenoFi behind the scenes design process image 5">
-            <img class="slideshow__slide" src="assets/renofi/renofi_bts_6.webp" alt="RenoFi behind the scenes design process image 6">
+            <img class="slideshow__slide" src="assets/renofi/renofi_bts_1.webp"
+                alt="RenoFi behind the scenes design process image 1">
+            <img class="slideshow__slide" src="assets/renofi/renofi_bts_2.webp"
+                alt="RenoFi behind the scenes design process image 2">
+            <img class="slideshow__slide" src="assets/renofi/renofi_bts_3.webp"
+                alt="RenoFi behind the scenes design process image 3">
+            <img class="slideshow__slide" src="assets/renofi/renofi_bts_4.webp"
+                alt="RenoFi behind the scenes design process image 4">
+            <img class="slideshow__slide" src="assets/renofi/renofi_bts_5.webp"
+                alt="RenoFi behind the scenes design process image 5">
+            <img class="slideshow__slide" src="assets/renofi/renofi_bts_6.webp"
+                alt="RenoFi behind the scenes design process image 6">
 
             <div class="slideshow__thumbnail--wrapper">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_1.webp" alt="Thumbnail for RenoFi behind the scenes image 1">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_2.webp" alt="Thumbnail for RenoFi behind the scenes image 2">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_3.webp" alt="Thumbnail for RenoFi behind the scenes image 3">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_4.webp" alt="Thumbnail for RenoFi behind the scenes image 4">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_5.webp" alt="Thumbnail for RenoFi behind the scenes image 5">
-                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_6.webp" alt="Thumbnail for RenoFi behind the scenes image 6">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_1.webp"
+                    alt="Thumbnail for RenoFi behind the scenes image 1">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_2.webp"
+                    alt="Thumbnail for RenoFi behind the scenes image 2">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_3.webp"
+                    alt="Thumbnail for RenoFi behind the scenes image 3">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_4.webp"
+                    alt="Thumbnail for RenoFi behind the scenes image 4">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_5.webp"
+                    alt="Thumbnail for RenoFi behind the scenes image 5">
+                <img class="slideshow__thumbnail" src="assets/renofi/renofi_bts_6.webp"
+                    alt="Thumbnail for RenoFi behind the scenes image 6">
             </div>
         </div>
 
@@ -424,11 +471,16 @@
             </div>
 
             <div class="slideshow__thumbnail--wrapper">
-                <img class="slideshow__thumbnail active" src="assets/reaqta/reaqta_website_1_thumbnail.svg" alt="ReaQta Website Thumbnail 1">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_2.svg" alt="ReaQta Website Thumbnail 2">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_3.svg" alt="ReaQta Website Thumbnail 3">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_4.svg" alt="ReaQta Website Thumbnail 4">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_5.svg" alt="ReaQta Website Thumbnail 5">
+                <img class="slideshow__thumbnail active" src="assets/reaqta/reaqta_website_1_thumbnail.svg"
+                    alt="ReaQta Website Thumbnail 1">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_2.svg"
+                    alt="ReaQta Website Thumbnail 2">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_3.svg"
+                    alt="ReaQta Website Thumbnail 3">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_4.svg"
+                    alt="ReaQta Website Thumbnail 4">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_5.svg"
+                    alt="ReaQta Website Thumbnail 5">
             </div>
         </div>
 
@@ -456,20 +508,32 @@
         </div>
 
         <div class="slideshow">
-            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_1.svg" alt="ReaQta platform interface screen 1">
-            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_2.svg" alt="ReaQta platform interface screen 2">
-            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_3.svg" alt="ReaQta platform interface screen 3">
-            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_4.svg" alt="ReaQta platform interface screen 4">
-            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_5.svg" alt="ReaQta platform interface screen 5">
-            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_6.svg" alt="ReaQta platform interface screen 6">
+            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_1.svg"
+                alt="ReaQta platform interface screen 1">
+            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_2.svg"
+                alt="ReaQta platform interface screen 2">
+            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_3.svg"
+                alt="ReaQta platform interface screen 3">
+            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_4.svg"
+                alt="ReaQta platform interface screen 4">
+            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_5.svg"
+                alt="ReaQta platform interface screen 5">
+            <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_6.svg"
+                alt="ReaQta platform interface screen 6">
 
             <div class="slideshow__thumbnail--wrapper">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_1.svg" alt="Thumbnail for ReaQta platform screen 1">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_2.svg" alt="Thumbnail for ReaQta platform screen 2">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_3.svg" alt="Thumbnail for ReaQta platform screen 3">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_4.svg" alt="Thumbnail for ReaQta platform screen 4">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_5.svg" alt="Thumbnail for ReaQta platform screen 5">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_6.svg" alt="Thumbnail for ReaQta platform screen 6">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_1.svg"
+                    alt="Thumbnail for ReaQta platform screen 1">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_2.svg"
+                    alt="Thumbnail for ReaQta platform screen 2">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_3.svg"
+                    alt="Thumbnail for ReaQta platform screen 3">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_4.svg"
+                    alt="Thumbnail for ReaQta platform screen 4">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_5.svg"
+                    alt="Thumbnail for ReaQta platform screen 5">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_6.svg"
+                    alt="Thumbnail for ReaQta platform screen 6">
             </div>
         </div>
 
@@ -488,12 +552,18 @@
             <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_6.svg" alt="ReaQta brand book page 6">
 
             <div class="slideshow__thumbnail--wrapper">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_1.svg" alt="Thumbnail for ReaQta brand book page 1">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_2.svg" alt="Thumbnail for ReaQta brand book page 2">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_3.svg" alt="Thumbnail for ReaQta brand book page 3">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_4.svg" alt="Thumbnail for ReaQta brand book page 4">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_5.svg" alt="Thumbnail for ReaQta brand book page 5">
-                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_6.svg" alt="Thumbnail for ReaQta brand book page 6">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_1.svg"
+                    alt="Thumbnail for ReaQta brand book page 1">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_2.svg"
+                    alt="Thumbnail for ReaQta brand book page 2">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_3.svg"
+                    alt="Thumbnail for ReaQta brand book page 3">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_4.svg"
+                    alt="Thumbnail for ReaQta brand book page 4">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_5.svg"
+                    alt="Thumbnail for ReaQta brand book page 5">
+                <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_6.svg"
+                    alt="Thumbnail for ReaQta brand book page 6">
             </div>
         </div>
     </section>
@@ -528,23 +598,28 @@
         </span>
 
         <div class="work__project--block">
-            <img src="assets/aic/aic_website_1.webp" alt="AIC website homepage design" class="work__project--block--image">
+            <img src="assets/aic/aic_website_1.webp" alt="AIC website homepage design"
+                class="work__project--block--image">
         </div>
 
         <div class="work__project--block">
-            <img src="assets/aic/aic_website_2.webp" alt="AIC website about page design" class="work__project--block--image">
+            <img src="assets/aic/aic_website_2.webp" alt="AIC website about page design"
+                class="work__project--block--image">
         </div>
 
         <div class="work__project--block">
-            <img src="assets/aic/aic_website_3.webp" alt="AIC website portfolio page design" class="work__project--block--image">
+            <img src="assets/aic/aic_website_3.webp" alt="AIC website portfolio page design"
+                class="work__project--block--image">
         </div>
 
         <div class="work__project--block">
-            <img src="assets/aic/aic_website_Mobile.webp" alt="AIC website mobile version design" class="work__project--block--image">
+            <img src="assets/aic/aic_website_Mobile.webp" alt="AIC website mobile version design"
+                class="work__project--block--image">
         </div>
 
         <div class="work__project--block">
-            <img src="assets/aic/aic_website_4.webp" alt="AIC website contact page design" class="work__project--block--image">
+            <img src="assets/aic/aic_website_4.webp" alt="AIC website contact page design"
+                class="work__project--block--image">
         </div>
 
     </section>
@@ -588,24 +663,40 @@
         </div>
 
         <div class="slideshow work__project--block--content">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_1.png" alt="watchTowr brand book page 1">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_2.svg" alt="watchTowr brand book page 2">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_3.svg" alt="watchTowr brand book page 3">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_4.svg" alt="watchTowr brand book page 4">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_5.svg" alt="watchTowr brand book page 5">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_6.svg" alt="watchTowr brand book page 6">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_7.png" alt="watchTowr brand book page 7">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_8.svg" alt="watchTowr brand book page 8">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_1.png"
+                alt="watchTowr brand book page 1">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_2.svg"
+                alt="watchTowr brand book page 2">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_3.svg"
+                alt="watchTowr brand book page 3">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_4.svg"
+                alt="watchTowr brand book page 4">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_5.svg"
+                alt="watchTowr brand book page 5">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_6.svg"
+                alt="watchTowr brand book page 6">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_7.png"
+                alt="watchTowr brand book page 7">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_8.svg"
+                alt="watchTowr brand book page 8">
 
             <div class="slideshow__thumbnail--wrapper">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_1.png" alt="Thumbnail for watchTowr brand book page 1">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_2.svg" alt="Thumbnail for watchTowr brand book page 2">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_3.svg" alt="Thumbnail for watchTowr brand book page 3">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_4.svg" alt="Thumbnail for watchTowr brand book page 4">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_5.svg" alt="Thumbnail for watchTowr brand book page 5">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_6.svg" alt="Thumbnail for watchTowr brand book page 6">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_7.png" alt="Thumbnail for watchTowr brand book page 7">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_8.svg" alt="Thumbnail for watchTowr brand book page 8">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_1.png"
+                    alt="Thumbnail for watchTowr brand book page 1">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_2.svg"
+                    alt="Thumbnail for watchTowr brand book page 2">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_3.svg"
+                    alt="Thumbnail for watchTowr brand book page 3">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_4.svg"
+                    alt="Thumbnail for watchTowr brand book page 4">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_5.svg"
+                    alt="Thumbnail for watchTowr brand book page 5">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_6.svg"
+                    alt="Thumbnail for watchTowr brand book page 6">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_7.png"
+                    alt="Thumbnail for watchTowr brand book page 7">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_8.svg"
+                    alt="Thumbnail for watchTowr brand book page 8">
             </div>
         </div>
 
@@ -619,13 +710,20 @@
             <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_7.png" alt="watchTowr company photo 7">
 
             <div class="slideshow__thumbnail--wrapper">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_1.png" alt="Thumbnail for watchTowr company photo 1">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_2.png" alt="Thumbnail for watchTowr company photo 2">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_3.png" alt="Thumbnail for watchTowr company photo 3">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_4.png" alt="Thumbnail for watchTowr company photo 4">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_5.png" alt="Thumbnail for watchTowr company photo 5">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_6.png" alt="Thumbnail for watchTowr company photo 6">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_7.png" alt="Thumbnail for watchTowr company photo 7">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_1.png"
+                    alt="Thumbnail for watchTowr company photo 1">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_2.png"
+                    alt="Thumbnail for watchTowr company photo 2">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_3.png"
+                    alt="Thumbnail for watchTowr company photo 3">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_4.png"
+                    alt="Thumbnail for watchTowr company photo 4">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_5.png"
+                    alt="Thumbnail for watchTowr company photo 5">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_6.png"
+                    alt="Thumbnail for watchTowr company photo 6">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_7.png"
+                    alt="Thumbnail for watchTowr company photo 7">
             </div>
         </div>
 
@@ -635,24 +733,40 @@
         </div>
 
         <div class="slideshow work__project--block--content">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_1.svg" alt="watchTowr Labs brand book page 1">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_2.svg" alt="watchTowr Labs brand book page 2">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_3.svg" alt="watchTowr Labs brand book page 3">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_4.svg" alt="watchTowr Labs brand book page 4">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_5.svg" alt="watchTowr Labs brand book page 5">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_6.svg" alt="watchTowr Labs brand book page 6">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_7.svg" alt="watchTowr Labs brand book page 7">
-            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_8.svg" alt="watchTowr Labs brand book page 8">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_1.svg"
+                alt="watchTowr Labs brand book page 1">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_2.svg"
+                alt="watchTowr Labs brand book page 2">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_3.svg"
+                alt="watchTowr Labs brand book page 3">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_4.svg"
+                alt="watchTowr Labs brand book page 4">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_5.svg"
+                alt="watchTowr Labs brand book page 5">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_6.svg"
+                alt="watchTowr Labs brand book page 6">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_7.svg"
+                alt="watchTowr Labs brand book page 7">
+            <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_8.svg"
+                alt="watchTowr Labs brand book page 8">
 
             <div class="slideshow__thumbnail--wrapper">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_1.svg" alt="Thumbnail for watchTowr Labs brand book page 1">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_2.svg" alt="Thumbnail for watchTowr Labs brand book page 2">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_3.svg" alt="Thumbnail for watchTowr Labs brand book page 3">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_4.svg" alt="Thumbnail for watchTowr Labs brand book page 4">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_5.svg" alt="Thumbnail for watchTowr Labs brand book page 5">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_6.svg" alt="Thumbnail for watchTowr Labs brand book page 6">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_7.svg" alt="Thumbnail for watchTowr Labs brand book page 7">
-                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_8.svg" alt="Thumbnail for watchTowr Labs brand book page 8">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_1.svg"
+                    alt="Thumbnail for watchTowr Labs brand book page 1">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_2.svg"
+                    alt="Thumbnail for watchTowr Labs brand book page 2">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_3.svg"
+                    alt="Thumbnail for watchTowr Labs brand book page 3">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_4.svg"
+                    alt="Thumbnail for watchTowr Labs brand book page 4">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_5.svg"
+                    alt="Thumbnail for watchTowr Labs brand book page 5">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_6.svg"
+                    alt="Thumbnail for watchTowr Labs brand book page 6">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_7.svg"
+                    alt="Thumbnail for watchTowr Labs brand book page 7">
+                <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_8.svg"
+                    alt="Thumbnail for watchTowr Labs brand book page 8">
             </div>
         </div>
 
@@ -708,25 +822,32 @@
         </div>
 
         <div class="work__project--block">
-            <img src="assets/exodus/exodus_1.svg" alt="Exodus wallet dashboard with cryptocurrency balances" class="work__project--block--image">
+            <img src="assets/exodus/exodus_1.svg" alt="Exodus wallet dashboard with cryptocurrency balances"
+                class="work__project--block--image">
         </div>
         <div class="work__project--block">
-            <img src="assets/exodus/exodus_2.svg" alt="Exodus wallet transaction history view" class="work__project--block--image">
+            <img src="assets/exodus/exodus_2.svg" alt="Exodus wallet transaction history view"
+                class="work__project--block--image">
         </div>
         <div class="work__project--block">
-            <img src="assets/exodus/exodus_3.svg" alt="Exodus wallet settings interface" class="work__project--block--image">
+            <img src="assets/exodus/exodus_3.svg" alt="Exodus wallet settings interface"
+                class="work__project--block--image">
         </div>
         <div class="work__project--block">
-            <img src="assets/exodus/exodus_4.svg" alt="Exodus wallet exchange feature" class="work__project--block--image">
+            <img src="assets/exodus/exodus_4.svg" alt="Exodus wallet exchange feature"
+                class="work__project--block--image">
         </div>
         <div class="work__project--block">
-            <img src="assets/exodus/exodus_5.svg" alt="Exodus wallet portfolio analytics" class="work__project--block--image">
+            <img src="assets/exodus/exodus_5.svg" alt="Exodus wallet portfolio analytics"
+                class="work__project--block--image">
         </div>
         <div class="work__project--block">
-            <img src="assets/exodus/exodus_6.svg" alt="Exodus wallet cryptocurrency details page" class="work__project--block--image">
+            <img src="assets/exodus/exodus_6.svg" alt="Exodus wallet cryptocurrency details page"
+                class="work__project--block--image">
         </div>
         <div class="work__project--block">
-            <img src="assets/exodus/exodus_7.png" alt="Exodus wallet MacOS widget interface design" class="work__project--block--image">
+            <img src="assets/exodus/exodus_7.png" alt="Exodus wallet MacOS widget interface design"
+                class="work__project--block--image">
         </div>
 
     </section>
@@ -744,7 +865,8 @@
             </video>
         </div>
         <div class="work__project--block">
-            <img src="assets/OriginTrail/origintrail_gif.gif" alt="OriginTrail blockchain visualization" class="work__project--block--image">
+            <img src="assets/OriginTrail/origintrail_gif.gif" alt="OriginTrail blockchain visualization"
+                class="work__project--block--image">
         </div>
     </section>
 

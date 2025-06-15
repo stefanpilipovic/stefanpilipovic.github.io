@@ -30,7 +30,7 @@
 }
 
 .work__project--block--video {
- cursor: pointer;
+    cursor: pointer;
 }
 
 .work__project--block--video--slideshow,
@@ -78,6 +78,14 @@
     color: #767676;
 }
 
+@media (max-width: 1230px) {
+    .work__title {
+        font-size: 32px;
+    }
+
+}
+
+
 @media (max-width: 768px) {
 
     /* On smaller screens, switch to 2 columns */
@@ -87,7 +95,15 @@
     }
 }
 
+@media (max-width: 660px) {
+    .work__title {
+        font-size: 24px;
+    }
+
+}
+
 @media (max-width: 480px) {
+
 
     /* On very small screens, switch to 1 column */
     .work__project--block--reviews {

@@ -2,7 +2,6 @@
 
 .experience__title {
     margin-top: 120px;
-    margin-bottom: 24px;
     font-size: 40px;
     margin-bottom: 40px;
     font-weight: 700;
@@ -19,7 +18,7 @@
 .experience__item--left--side {
     display: flex;
     align-items: center;
-    width: 40%;
+    width: 50%;
 }
 
 .experience__item--logo {
@@ -36,6 +35,10 @@
     line-height: 140%;
     color: #000000;
     display: block;
+}
+
+.ibm__logo {
+    width: 15%;
 }
 
 .experience__company--sector {
@@ -67,6 +70,84 @@
     opacity: 0.3;
     width: calc(100% - 72px);
     margin-left: auto;
+}
+
+@media (max-width: 1230px) {
+
+    .experience__title {
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+
+}
+
+@media (max-width: 780px) {
+
+    .experience__company--name {
+        font-size: 16px;
+        line-height: 140%;
+        color: #000000;
+        display: block;
+    }
+
+    .experience__company--sector {
+        font-size: 16px;
+        line-height: 140%;
+        color: #767676;
+    }
+
+    .experience__location {
+        text-align: center;
+        font-size: 16px;
+        line-height: 140%;
+        color: #000000;
+        width: 30%;
+    }
+
+    .experience__duration {
+        text-align: right;
+        font-size: 16px;
+        line-height: 140%;
+        color: #767676;
+        letter-spacing: -0.5px;
+        width: 30%;
+    }
+
+}
+
+@media (max-width: 660px) {
+
+    .experience__title {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+} 
+
+@media (max-width: 560px) {
+
+    .experience__location {
+        display: none;
+    }
+
+    .experience__item--left--side {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .experience__duration {
+        width: 50%;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+
+    .experience__duration {
+        width: 30%;
+    }
+
 }
 
 /* EXPERIENCE END */
