@@ -37,10 +37,6 @@
     display: block;
 }
 
-.ibm__logo {
-    width: 15%;
-}
-
 .experience__company--sector {
     font-size: 20px;
     line-height: 140%;
@@ -52,7 +48,7 @@
     font-size: 20px;
     line-height: 140%;
     color: #000000;
-    width: 30%;
+    width: 50%;
 }
 
 .experience__duration {
@@ -73,81 +69,66 @@
 }
 
 @media (max-width: 1230px) {
-
     .experience__title {
         font-size: 32px;
         margin-bottom: 24px;
     }
+}
+
+@media (max-width: 1000px) {
+        .experience__duration {
+        max-width: 120px;
+    }
+
+    .experience__item--left--side {
+    width: 50%;
+}
 
 }
 
 @media (max-width: 780px) {
-
-    .experience__company--name {
-        font-size: 16px;
-        line-height: 140%;
-        color: #000000;
-        display: block;
-    }
-
-    .experience__company--sector {
-        font-size: 16px;
-        line-height: 140%;
-        color: #767676;
-    }
-
-    .experience__location {
-        text-align: center;
-        font-size: 16px;
-        line-height: 140%;
-        color: #000000;
-        width: 30%;
-    }
-
+    .experience__company--name,
+    .experience__company--sector,
+    .experience__location,
     .experience__duration {
-        text-align: right;
         font-size: 16px;
-        line-height: 140%;
-        color: #767676;
-        letter-spacing: -0.5px;
-        width: 30%;
+    }
+        
+    .experience__duration {
+        max-width: 1000px;
     }
 
-}
+    .ibm__logo {
+        width: 15%;
+    }
+    }
+
 
 @media (max-width: 660px) {
-
     .experience__title {
         font-size: 24px;
         margin-bottom: 24px;
     }
-} 
+}
 
 @media (max-width: 560px) {
-
     .experience__location {
         display: none;
     }
 
     .experience__item--left--side {
-        display: flex;
-        align-items: center;
         width: 100%;
     }
 
     .experience__duration {
         width: 50%;
     }
-
 }
 
 @media (max-width: 450px) {
-
-
     .experience__duration {
         width: 30%;
     }
-
 }
 
 /* EXPERIENCE END */

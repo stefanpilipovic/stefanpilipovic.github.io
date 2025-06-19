@@ -82,12 +82,9 @@
     .work__title {
         font-size: 32px;
     }
-
 }
 
-
 @media (max-width: 768px) {
-
     /* On smaller screens, switch to 2 columns */
     .work__project--block--reviews {
         grid-template-columns: repeat(2, 1fr);
@@ -99,12 +96,9 @@
     .work__title {
         font-size: 24px;
     }
-
 }
 
 @media (max-width: 480px) {
-
-
     /* On very small screens, switch to 1 column */
     .work__project--block--reviews {
         grid-template-columns: 1fr;

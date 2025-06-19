@@ -41,19 +41,13 @@
 
 
 @media (max-width: 1230px) {
-
     .about__image {
         width: 160px;
-        height: auto;
     }
 
     .about__text,
     .about {
         font-size: 32px;
-        font-weight: 700;
-        letter-spacing: -1px;
-        line-height: 120%;
-
     }
 }
 
@@ -77,15 +71,7 @@
     .about__title,
     .about__text {
         font-size: 24px;
-        font-weight: 700;
-        letter-spacing: -1px;
-        line-height: 120%;
     }
-
-}
-
-@media (max-width: 480px) {
-
 }
 
 /* ABOUT END */

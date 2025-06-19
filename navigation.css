@@ -11,7 +11,11 @@
     height: 72px;
     flex-wrap: wrap;
     padding: 0;
-    z-index: 100; /* Add high z-index to ensure navigation stays on top */
+    z-index: 100; /* Ensure navigation stays on top */
+}
+
+.navigation__links--wrapper--left {
+    padding-bottom: 2px; /* To align with links on the right */
 }
 
 .navigation__links--wrapper--left,
@@ -41,25 +45,21 @@
     cursor: pointer;
 }
 
-@media (max-width: 700px) {
-
+@media (max-width: 770px) {
     .navigation__links--wrapper--left {
         display: none;
     }
-
 }
 
 @media (max-width: 350px) {
-
     .navigation__links--wrapper--left,
     .navigation__links--wrapper--right {
         gap: 24px;
     }
 
     .navigation__link {
-    font-size: 16px;
-}
-
+        font-size: 16px;
+    }
 }
 
 /* NAVIGATION END */
