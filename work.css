@@ -1,23 +1,65 @@
 /* WORK START */
 
-.work__title {
+.work__heading {
     margin-top: 120px;
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     font-size: 40px;
     font-weight: 700;
+    max-width: 900px;
+}
+
+.work__title {
+    margin-top: 120px;
+    margin-bottom: 16px;
+    font-size: 32px;
+    font-weight: 700;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.work__subtitle {
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: 140%;
+    color: #767676;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.work__chip--wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 40px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.work__chip {
+    display: inline-block;
+    padding: 8px 12px 8px 12px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #333;
 }
 
 .work__description {
+
     font-size: 24px;
     line-height: 140%;
     color: #767676;
     max-width: 900px;
-    margin: 0;
+    margin: 0 auto;
 }
 
 .work__project--block {
     max-width: 900px;
-    margin: 64px auto 0;
+    margin: 72px auto 0;
 }
 
 .work__project--block--image,
@@ -74,7 +116,8 @@
     width: 100%;
     margin-top: 16px;
     text-align: center;
-    font-size: 14px;
+    font-size: 18px;
+    line-height: 140%;
     color: #767676;
 }
 
@@ -82,9 +125,22 @@
     .work__title {
         font-size: 32px;
     }
+
+    .work__description {
+        font-size: 20px;
+        line-height: 140%;
+        color: #767676;
+        max-width: 900px;
+        margin: 0;
+    }
+
+    .work__project--caption {
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 768px) {
+
     /* On smaller screens, switch to 2 columns */
     .work__project--block--reviews {
         grid-template-columns: repeat(2, 1fr);
@@ -96,14 +152,14 @@
     .work__title {
         font-size: 24px;
     }
-}
 
-@media (max-width: 480px) {
     /* On very small screens, switch to 1 column */
     .work__project--block--reviews {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6, 1fr);
     }
 }
+
+@media (max-width: 480px) {}
 
 /* WORK END */
