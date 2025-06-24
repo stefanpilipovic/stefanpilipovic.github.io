@@ -35,18 +35,23 @@
 }
 
 .accordion__header--icon {
-    display: inline-block; /* Ensures the element can be transformed */
-    width: 40px; /* Fixed width to prevent layout shifts */
+    display: inline-block;
+    /* Ensures the element can be transformed */
+    width: 40px;
+    /* Fixed width to prevent layout shifts */
     text-align: center;
 }
 
 .accordion__header--icon::before {
-    content: '\002B'; /* plus sign */
-    display: inline-block; /* Required for transform to work properly */
+    content: '\002B';
+    /* plus sign */
+    display: inline-block;
+    /* Required for transform to work properly */
     transform: rotate(0deg);
     font-size: 28px;
     color: #ffffff;
-    transition: all 0.3s ease; /* Animate all properties including transform */
+    transition: all 0.3s ease;
+    /* Animate all properties including transform */
     background-color: #0071E3;
     border-radius: 100px;
     padding: 4px 9px 8px 9px;
@@ -55,7 +60,8 @@
 
 .accordion__header.active .accordion__header--icon::before {
     content: '\002B';
-    transform: rotate(45deg); /* Rotate to make it look like an "x" */
+    transform: rotate(45deg);
+    /* Rotate to make it look like an "x" */
     background-color: #767676;
     font-size: 28px;
     border-radius: 100px;
@@ -72,8 +78,10 @@
 
 .accordion__body--content {
     display: flex;
+    max-width: 720px;
+    margin: 0 auto;
     flex-direction: column;
-    padding: 32px 32px 64px 32px;
+    padding: 44px 44px 64px 44px;
     line-height: 150%;
     border-top: 1px solid;
     border-image: linear-gradient(to right, transparent, #dedede, transparent) 1;
@@ -112,6 +120,10 @@ ul {
     list-style-position: outside;
     padding-inline-start: 36px;
     list-style-type: disc;
+}
+
+li {
+    margin: 4px 0;
 }
 
 li::marker {
