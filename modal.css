@@ -1,41 +1,125 @@
+/* Disable body scrolling when modal is open */
+body.modal-open {
+  overflow: hidden;
+  /* Don't add padding - we'll handle scrollbar compensation in JS */
+}
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   padding-bottom: 80px;
-  padding-top: 3%;
+  padding-top: 1%;
   z-index: 10001; /* Sit on top */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Modal visible state */
+.modal.visible {
+  opacity: 1;
+}
+
+/* iOS-style pull bar */
+.modal__pull--bar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+  cursor: pointer;
+  z-index: 10002;
+  margin-bottom: -10px;
+  padding-top: 10px;
+}
+
+.modal__pull--indicator {
+  width: 36px;
+  height: 5px;
+  background-color: #e0e0e0;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+.modal__pull--bar:hover .modal__pull--indicator {
+  background-color: #c0c0c0;
 }
 
 /* Modal Content/Box */
 .modal__content {
   background-color: #ffffff;
-  margin: 0 auto; /* 15% from the top and centered */
-  padding: 48px;
+  margin: 0 auto;
+  padding: 0 48px 48px 48px; /* 48px padding as requested */
   border: 1px solid #e2e2e2;
   border-radius: 28px;
   width: fit-content; /* Width will be determined by content */
   max-width: 95%; /* Prevent overflow on small screens */
+  position: relative; /* For positioning the pull bar */
+  overflow: hidden; /* Ensure the pull bar doesn't extend outside the modal */
+  transform: translateY(100%); /* Start from bottom of screen */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Use a nice easing curve, no opacity transition */
 }
 
-/* The Close Button */
-.modal__close {
-  color: #ff0000;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+/* Animation for modal content when modal is visible */
+.modal.visible .modal__content {
+  transform: translateY(0);
 }
 
-.modal__close:hover,
-.modal__close:focus {
-  color: black;
-  text-decoration: none;
+/* Round close button at the bottom of modal */
+.modal__close--button {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #333336;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
+  z-index: 10003;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  margin-top: 20px; /* Add space between modal content and close button */
+}
+
+.modal.visible .modal__close--button {
+  opacity: 1;
+}
+
+.modal__close--button:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.modal__close--button::before,
+.modal__close--button::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  border-radius: 1px;
+}
+
+.modal__close--button::before {
+  transform: rotate(45deg);
+}
+
+.modal__close--button::after {
+  transform: rotate(-45deg);
 }
