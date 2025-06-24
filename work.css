@@ -121,6 +121,11 @@
     color: #767676;
 }
 
+.work__project--caption--highlight {
+    color: #000000;
+    font-weight: 600;
+}
+
 @media (max-width: 1230px) {
     .work__title {
         font-size: 32px;
