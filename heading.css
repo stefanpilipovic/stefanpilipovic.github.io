@@ -10,14 +10,14 @@
 
 @media (max-width: 980px) {
     .heading {
-        padding: 56px 0;
+        padding: 48px 0;
         font-size: 48px;
     }
 }
 
 @media (max-width: 480px) {
     .heading {
-        padding: 48px 0;
+        padding: 24px 0 56px 0;
         font-size: 32px;
     }
 }

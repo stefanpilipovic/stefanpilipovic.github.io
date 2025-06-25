@@ -1,6 +1,6 @@
 function hideVideoControls() {
   // Select videos with autoplay classes
-  const workVideos = document.querySelectorAll('.work__project--block--video, .work__project--block--video--slideshow ');
+  const workVideos = document.querySelectorAll('.work__project--block--video, .work__project--block--video--slideshow');
 
   // Apply common attributes to each video
   workVideos.forEach(function (video) {

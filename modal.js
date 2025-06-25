@@ -34,6 +34,11 @@ function openModal() {
   // Disable background scrolling
   document.body.classList.add('modal-open');
   
+  // Reset scroll position
+  if (modalContent) {
+    modalContent.scrollTop = 0;
+  }
+  
   // Display the modal
   modal.style.display = "block";
   
@@ -45,6 +50,12 @@ function openModal() {
 
 // Function to close modal with animation
 function closeModal() {
+  // Immediately reset scroll positions
+  if (modalContent) {
+    modalContent.scrollTop = 0;
+  }
+  modal.scrollTop = 0;
+  
   // Start closing animation
   modal.classList.remove('visible');
   
@@ -60,6 +71,12 @@ function closeModal() {
     
     // Restore scroll position
     window.scrollTo(0, scrollPosition);
+    
+    // Reset modal scroll position again when it's hidden
+    modal.scrollTop = 0;
+    if (modalContent) {
+      modalContent.scrollTop = 0;
+    }
   }, 400); // Match this with the CSS transition duration
 }
 
@@ -123,6 +140,15 @@ modal.addEventListener("touchend", function() {
   // If pulled down far enough, close the modal
   if (deltaY > 100) {
     closeModal();
+    return; // Exit early since closeModal will handle everything
   }
-
+  
+  // Reset styles if not closing
+  modalContent.style.transform = "";
+  modal.style.backgroundColor = "rgba(0,0,0,0.4)";
+  
+  // Reset touch tracking variables
+  startY = 0;
+  currentY = 0;
+  isScrolledToTop = false;
 });

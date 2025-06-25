@@ -6,20 +6,33 @@ body.modal-open {
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
   padding-bottom: 80px;
   padding-top: 1%;
-  z-index: 10001; /* Sit on top */
+  z-index: 100;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-overflow-scrolling: touch; /* Enables momentum scrolling on iOS */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  -webkit-overflow-scrolling: touch;
+  /* Enables momentum scrolling on iOS */
   opacity: 0;
   transition: opacity 0.3s ease;
+  will-change: opacity;
+  /* Optimize for animation */
+  backface-visibility: hidden;
+  /* Prevent flickering */
+  -webkit-backface-visibility: hidden;
 }
 
 /* Modal visible state */
@@ -40,7 +53,7 @@ body.modal-open {
   border-top-left-radius: 28px;
   border-top-right-radius: 28px;
   cursor: pointer;
-  z-index: 10002;
+  z-index: 101;
   margin-bottom: -10px;
   padding-top: 10px;
 }
@@ -61,15 +74,28 @@ body.modal-open {
 .modal__content {
   background-color: #ffffff;
   margin: 0 auto;
-  padding: 0 48px 48px 48px; /* 48px padding as requested */
+  padding: 0 48px 48px 48px;
   border: 1px solid #e2e2e2;
   border-radius: 28px;
-  width: fit-content; /* Width will be determined by content */
-  max-width: 95%; /* Prevent overflow on small screens */
-  position: relative; /* For positioning the pull bar */
-  overflow: hidden; /* Ensure the pull bar doesn't extend outside the modal */
-  transform: translateY(100%); /* Start from bottom of screen */
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Use a nice easing curve, no opacity transition */
+  width: fit-content;
+  /* Width will be determined by content */
+  max-width: 99%;
+  /* Prevent overflow on small screens */
+  position: relative;
+  /* For positioning the pull bar */
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+  overflow-y: auto;
+  /* Allow vertical scrolling */
+  transform: translateY(100%);
+  /* Start from bottom of screen */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Use a nice easing curve, no opacity transition */
+  will-change: transform;
+  /* Optimize for animation */
+  backface-visibility: hidden;
+  /* Prevent flickering */
+  -webkit-backface-visibility: hidden;
 }
 
 /* Animation for modal content when modal is visible */
@@ -91,11 +117,12 @@ body.modal-open {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 10003;
+  z-index: 102;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  margin-top: 20px; /* Add space between modal content and close button */
+  margin-top: 20px;
+  /* Add space between modal content and close button */
 }
 
 .modal.visible .modal__close--button {
@@ -122,4 +149,12 @@ body.modal-open {
 
 .modal__close--button::after {
   transform: rotate(-45deg);
+}
+
+
+@media (max-width: 768px) {
+.modal__content {
+  padding: 0 24px 24px 24px;
+}
+
 }
