@@ -1,30 +1,20 @@
-// Get the modal
-var modal = document.getElementById("Modal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("openModal");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// Get the pull bar element
-var pullBar = document.querySelector(".modal__pull--bar");
-
-// Get the round close button
-var roundCloseBtn = document.querySelector(".modal__close--button");
+// Variables to store original body state
+let scrollPosition = 0;
+let bodyPaddingRight = "";
+let currentModal = null;
+let currentModalContent = null;
 
 // Variables for touch handling
 let startY = 0;
 let currentY = 0;
 let isScrolledToTop = false;
-let modalContent = document.querySelector(".modal__content");
-
-// Variables to store original body state
-let scrollPosition = 0;
-let bodyPaddingRight = "";
 
 // Function to open modal with animation
-function openModal() {
+function openModal(modalElement) {
+  // Set current modal and modal content
+  currentModal = modalElement;
+  currentModalContent = modalElement.querySelector(".modal__content");
+  
   // Save current scroll position
   scrollPosition = window.pageYOffset;
   
@@ -35,33 +25,39 @@ function openModal() {
   document.body.classList.add('modal-open');
   
   // Reset scroll position
-  if (modalContent) {
-    modalContent.scrollTop = 0;
+  if (currentModalContent) {
+    currentModalContent.scrollTop = 0;
   }
+  currentModal.scrollTop = 0;
   
   // Display the modal
-  modal.style.display = "block";
+  currentModal.style.display = "block";
   
   // Trigger animation after a small delay to ensure display:block has taken effect
   setTimeout(function() {
-    modal.classList.add('visible');
+    currentModal.classList.add('visible');
   }, 10);
+  
+  // Add touch event listeners to the current modal
+  setupTouchEvents(currentModal);
 }
 
 // Function to close modal with animation
 function closeModal() {
+  if (!currentModal) return;
+  
   // Immediately reset scroll positions
-  if (modalContent) {
-    modalContent.scrollTop = 0;
+  if (currentModalContent) {
+    currentModalContent.scrollTop = 0;
   }
-  modal.scrollTop = 0;
+  currentModal.scrollTop = 0;
   
   // Start closing animation
-  modal.classList.remove('visible');
+  currentModal.classList.remove('visible');
   
   // Wait for animation to complete before hiding the modal
   setTimeout(function() {
-    modal.style.display = "none";
+    currentModal.style.display = "none";
     
     // Re-enable background scrolling
     document.body.classList.remove('modal-open');
@@ -73,82 +69,112 @@ function closeModal() {
     window.scrollTo(0, scrollPosition);
     
     // Reset modal scroll position again when it's hidden
-    modal.scrollTop = 0;
-    if (modalContent) {
-      modalContent.scrollTop = 0;
+    currentModal.scrollTop = 0;
+    if (currentModalContent) {
+      currentModalContent.scrollTop = 0;
     }
+    
+    // Clear current modal references
+    currentModal = null;
+    currentModalContent = null;
   }, 400); // Match this with the CSS transition duration
 }
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  openModal();
+// Setup touch events for a modal
+function setupTouchEvents(modal) {
+  // Touch event handling for mobile pull-down gesture
+  modal.addEventListener("touchstart", function(e) {
+    startY = e.touches[0].clientY;
+    
+    // Check if scrolled to top
+    isScrolledToTop = modal.scrollTop <= 0;
+  }, { passive: true });
+
+  modal.addEventListener("touchmove", function(e) {
+    if (!isScrolledToTop) return;
+    
+    currentY = e.touches[0].clientY;
+    let deltaY = currentY - startY;
+    
+    // If pulling down when already at the top
+    if (deltaY > 0) {
+      // Prevent default scrolling behavior
+      e.preventDefault();
+      
+      // Apply a resistance factor to make the pull feel natural
+      let pullDistance = Math.min(deltaY * 0.5, 150);
+      
+      // Visually move the modal content down slightly
+      currentModalContent.style.transform = `translateY(${pullDistance}px)`;
+      
+      // Change opacity based on pull distance
+      modal.style.backgroundColor = `rgba(0,0,0,${0.4 - (pullDistance / 250)})`;
+    }
+  }, { passive: false });
+
+  modal.addEventListener("touchend", function() {
+    if (!isScrolledToTop) return;
+    
+    let deltaY = currentY - startY;
+    
+    // If pulled down far enough, close the modal
+    if (deltaY > 100) {
+      closeModal();
+      return; // Exit early since closeModal will handle everything
+    }
+    
+    // Reset styles if not closing
+    if (currentModalContent) {
+      currentModalContent.style.transform = "";
+    }
+    if (currentModal) {
+      currentModal.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+    
+    // Reset touch tracking variables
+    startY = 0;
+    currentY = 0;
+    isScrolledToTop = false;
+  });
 }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    closeModal();
-  }
-}
-
-// Close modal when clicking on the pull bar (desktop)
-pullBar.addEventListener("click", function() {
-  closeModal();
-});
-
-// Close modal when clicking on the round close button
-roundCloseBtn.addEventListener("click", function() {
-  closeModal();
-});
-
-// Touch event handling for mobile pull-down gesture
-modal.addEventListener("touchstart", function(e) {
-  startY = e.touches[0].clientY;
+// Initialize all modals when the DOM is loaded
+document.addEventListener("DOMContentLoaded", function() {
+  // Get all modal triggers (elements with class work__cover)
+  const modalTriggers = document.querySelectorAll(".work__cover");
   
-  // Check if scrolled to top
-  isScrolledToTop = modal.scrollTop <= 0;
-}, { passive: true });
-
-modal.addEventListener("touchmove", function(e) {
-  if (!isScrolledToTop) return;
+  // Get all modals (elements with class modal)
+  const modals = document.querySelectorAll(".modal");
   
-  currentY = e.touches[0].clientY;
-  let deltaY = currentY - startY;
-  
-  // If pulling down when already at the top
-  if (deltaY > 0) {
-    // Prevent default scrolling behavior
-    e.preventDefault();
+  // Add click event to each modal trigger
+  modalTriggers.forEach(function(trigger, index) {
+    // Find the corresponding modal (assuming they're in the same order)
+    const modal = modals[index];
     
-    // Apply a resistance factor to make the pull feel natural
-    let pullDistance = Math.min(deltaY * 0.5, 150);
-    
-    // Visually move the modal content down slightly
-    modalContent.style.transform = `translateY(${pullDistance}px)`;
-    
-    // Change opacity based on pull distance
-    modal.style.backgroundColor = `rgba(0,0,0,${0.4 - (pullDistance / 250)})`;
-  }
-}, { passive: false });
-
-modal.addEventListener("touchend", function() {
-  if (!isScrolledToTop) return;
+    if (modal) {
+      // Add click event to trigger
+      trigger.addEventListener("click", function() {
+        openModal(modal);
+      });
+      
+      // Add click event to close button in this modal
+      const closeButton = modal.querySelector(".modal__close--button");
+      if (closeButton) {
+        closeButton.addEventListener("click", closeModal);
+      }
+      
+      // Add click event to pull bar in this modal
+      const pullBar = modal.querySelector(".modal__pull--bar");
+      if (pullBar) {
+        pullBar.addEventListener("click", closeModal);
+      }
+    }
+  });
   
-  let deltaY = currentY - startY;
-  
-  // If pulled down far enough, close the modal
-  if (deltaY > 100) {
-    closeModal();
-    return; // Exit early since closeModal will handle everything
-  }
-  
-  // Reset styles if not closing
-  modalContent.style.transform = "";
-  modal.style.backgroundColor = "rgba(0,0,0,0.4)";
-  
-  // Reset touch tracking variables
-  startY = 0;
-  currentY = 0;
-  isScrolledToTop = false;
+  // When the user clicks anywhere outside of the modal content, close it
+  window.addEventListener("click", function(event) {
+    if (currentModal && event.target === currentModal) {
+      closeModal();
+    }
+  });
 });

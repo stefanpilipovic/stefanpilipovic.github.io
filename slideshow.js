@@ -55,8 +55,9 @@ function setupIntersectionObserver(slideshow) {
   const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
-              // Start slideshow immediately if it's not already active and doesn't have no-autoplay class
-              if (!slideshow.isActive && !slideshow.container.classList.contains('no-autoplay')) {
+              // Start slideshow immediately if it's not already active, doesn't have no-autoplay class,
+              // and user hasn't manually interacted with it
+              if (!slideshow.isActive && !slideshow.container.classList.contains('no-autoplay') && !slideshow.userInteracted) {
                   startSlideshow(slideshow);
                   slideshow.isActive = true;
               } else if (!slideshow.isActive && slideshow.container.classList.contains('no-autoplay')) {
@@ -100,7 +101,8 @@ function initSlideshow() {
            thumbnails: container.querySelectorAll('.slideshow__thumbnail'),
            currentIndex: 0,
            interval: null,
-           isActive: false
+           isActive: false,
+           userInteracted: false // Flag to track if user has manually interacted with slideshow
        };
 
        // Show the first slide
@@ -110,9 +112,10 @@ function initSlideshow() {
        Array.from(slideshow.thumbnails).forEach(function (thumbnail, index) {
            thumbnail.addEventListener('click', function () {
                showSlide(slideshow, index);
-               // Only reset slideshow timer if it's active and not a no-autoplay slideshow
+               // Cancel automatic slideshow when user manually selects a slide
                if (slideshow.isActive && !slideshow.container.classList.contains('no-autoplay')) {
-                   resetSlideshow(slideshow);
+                   clearInterval(slideshow.interval);
+                   slideshow.userInteracted = true; // Flag to indicate user interaction
                }
            });
        });

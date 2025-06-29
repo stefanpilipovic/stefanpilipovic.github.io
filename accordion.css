@@ -20,6 +20,7 @@
     line-height: 150%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position: relative;
     cursor: pointer;
 }
@@ -38,35 +39,20 @@
     display: inline-block;
     /* Ensures the element can be transformed */
     width: 40px;
+    height: 40px;
     /* Fixed width to prevent layout shifts */
-    text-align: center;
-}
-
-.accordion__header--icon::before {
-    content: '\002B';
-    /* plus sign */
-    display: inline-block;
-    /* Required for transform to work properly */
+    background-color: #0071E3;
+    border-radius: 50%;
+    padding: 12px;
     transform: rotate(0deg);
-    font-size: 28px;
-    color: #ffffff;
     transition: all 0.3s ease;
     /* Animate all properties including transform */
-    background-color: #0071E3;
-    border-radius: 100px;
-    padding: 4px 9px 8px 9px;
-    margin-right: -8px;
 }
 
-.accordion__header.active .accordion__header--icon::before {
-    content: '\002B';
+.accordion__header.active .accordion__header--icon {
     transform: rotate(45deg);
     /* Rotate to make it look like an "x" */
     background-color: #767676;
-    font-size: 28px;
-    border-radius: 100px;
-    padding: 4px 9px 8px 9px;
-    margin-right: -8px;
 }
 
 .accordion__body {

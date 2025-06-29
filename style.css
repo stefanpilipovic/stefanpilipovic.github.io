@@ -11,6 +11,16 @@ body {
     margin: auto;
 }
 
+.symbol__register--superscript {
+  font-size: 0.7em; /* reduce size */
+  vertical-align: top; /* raise it to look like a superscript */
+}
+
+.symbol {
+    font-family: 'Noto Sans Symbols 2', sans-serif;
+}
+
+
 @media (max-width: 768px) {
 
     body {

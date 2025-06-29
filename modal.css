@@ -103,6 +103,7 @@ body.modal-open {
   transform: translateY(0);
 }
 
+
 /* Round close button at the bottom of modal */
 .modal__close--button {
   position: fixed;
@@ -117,9 +118,9 @@ body.modal-open {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  z-index: 102;
+  z-index: 9999;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  opacity: 0;
+  opacity: 1; /* Always visible */
   transition: opacity 0.3s ease, transform 0.3s ease;
   margin-top: 20px;
   /* Add space between modal content and close button */
@@ -133,28 +134,17 @@ body.modal-open {
   transform: translateX(-50%) scale(1.1);
 }
 
-.modal__close--button::before,
-.modal__close--button::after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 2px;
-  background-color: white;
-  border-radius: 1px;
-}
-
-.modal__close--button::before {
+.modal__close--icon {
+  width: 16px;
+  height: 16px;
   transform: rotate(45deg);
-}
-
-.modal__close--button::after {
-  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
 }
 
 
 @media (max-width: 768px) {
-.modal__content {
-  padding: 0 24px 24px 24px;
-}
+  .modal__content {
+    padding: 0 24px 24px 24px;
+  }
 
 }

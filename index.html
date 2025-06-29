@@ -43,11 +43,10 @@
         </div>
         <div class="navigation__links--wrapper--right">
             <a href="https://www.linkedin.com/in/spilipovic/" target="_blank" class="navigation__link"><span
-                    class="navigation__links--symbol">&#x1F855;</span> Linkedin</a>
+                    class="symbol">&#x1F855;</span> Linkedin</a>
             <a href="https://www.dribbble.com/caki/" target="_blank" class="navigation__link"><span
-                    class="navigation__links--symbol">&#129107;</span> Resume</a>
-            <a href="mailto:stefan.pilipovic@gmail.com" class="navigation__link"><span
-                    class="navigation__links--symbol">&#11194;</span>
+                    class="symbol">&#129107;</span> Resume</a>
+            <a href="mailto:stefan.pilipovic@gmail.com" class="navigation__link"><span class="symbol">&#11194;</span>
                 Email</a>
         </div>
     </nav>
@@ -57,6 +56,8 @@
         Based in
         Berlin, working remotely worldwide.
     </h1>
+
+    <!-- ABOUT START -->
 
     <section id="about" class="about">
         <h2 class="about__title">About</h2>
@@ -77,6 +78,9 @@
         </div>
     </section>
 
+    <!-- ABOUT END -->
+
+    <!-- EXPERIENCE START -->
 
     <section id="experience">
         <h2 class="experience__title">
@@ -160,7 +164,7 @@
                 </div>
                 <div class="experience__company--name--wrapper">
                     <span class="experience__company--name">Element451</span>
-                    <span class="experience__company--sector">EdTech • B2B • B2C</span>
+                    <span class="experience__company--sector">EdTech • B2B, B2C</span>
                 </div>
             </div>
             <div class="experience__location">
@@ -215,26 +219,55 @@
 
     </section>
 
+    <!-- EXPERIENCE END -->
+
+    <!-- WORK RENOFI START -->
+
     <section id="work">
+
         <h2 class="work__heading">
             Work
         </h2>
 
-        <div class="work__cover--renofi" id="openModal">
+        <!-- One cover
+        <div class="work__cover" style="background: linear-gradient(to bottom right, #FF6263, #7f0606);">
             <video class="work__cover--media" playsinline preload="auto" autoplay muted loop>
                 <source src="assets/renofi/renofi_video_1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
-            </video>
+            </video> -->
+
+        <div class="work__cover" style="background: linear-gradient(to bottom right, #FF6263, #7f0606);">
+
+            <div class="work__cover--media--wrapper">
+                <video class="work__cover--media work__cover--media--left" playsinline preload="auto" autoplay muted
+                    loop>
+                    <source src="assets/renofi/renofi_video_3_cover.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <video class="work__cover--media work__cover--media--center" playsinline preload="auto" autoplay muted
+                    loop>
+                    <source src="assets/renofi/renofi_video_1_cover.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <video class="work__cover--media work__cover--media--right" playsinline preload="auto" autoplay muted
+                    loop>
+                    <source src="assets/renofi/renofi_video_5_cover.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
 
             <div class="work__cover--gradient"></div>
-            </video>
             <div class="work__cover--text">
-                <div class="work__cover--heading">Fintech • B2B • B2B2C • B2C</div>
+                <div class="work__cover--heading">Fintech • SaaS • B2B, B2B2C, B2C</div>
                 <div class="work__cover--title">RenoFi</div>
             </div>
+            <img src="assets/icon_plus.svg" class="work__cover--open--button">
+
         </div>
 
-        <section id="Modal" class="modal">
+        <section class="modal">
             <div class="modal__content">
                 <div class="modal__pull--bar">
                     <div class="modal__pull--indicator"></div>
@@ -244,7 +277,7 @@
                     RenoFi
                 </h2>
                 <h2 class="work__subtitle">
-                    Fintech • B2B, B2C, B2B2C • Design Lead • USA • Remote
+                    Fintech • SaaS • B2B, B2C, B2B2C • Design Lead • USA • Remote
                 </h2>
 
                 <p class="work__chip--wrapper">
@@ -261,8 +294,11 @@
                     <span class="work__chip">Design System</span>
                     <span class="work__chip">A/B Testing</span>
                     <span class="work__chip">Visual Design</span>
-                    <span class="work__chip">Illustration</span>
+                    <span class="work__chip">Website Design</span>
+                    <span class="work__chip">Email Design</span>
+                    <span class="work__chip">Copywriting</span>
                     <span class="work__chip">Marketing Design</span>
+                    <span class="work__chip">Presentation Design</span>
                     <span class="work__chip">Motion Design</span>
                     <span class="work__chip">Illustration Design</span>
                     <span class="work__chip">Accessibility (WCAG)</span>
@@ -272,7 +308,8 @@
                     Designed seamless end-to-end experiences for borrowers, lenders, and internal teams, streamlining
                     the renovation loan journey across a complex multi-portal platform.
                     <br><br>
-                    Collaborated closely with cross-functional teams in a fully remote, highly regulated fintech
+                    Collaborated directly with the CEO, CTO and cross-functional teams in a fully remote, highly
+                    regulated fintech
                     environment to validate design decisions through real-world testing, UX writing, and compliance
                     alignment.
                 </p>
@@ -290,7 +327,7 @@
                                     click-through rate</span> by <span class="work__project--caption--highlight">3.6
                                     times</span>
                             </span>
-                            <span class="accordion__header--icon"></span>
+                            <img src="assets/icon_plus.svg" class="accordion__header--icon">
                         </div><!-- /.accordion__header -->
                         <div class="accordion__body">
                             <div class="accordion__body--content">
@@ -439,8 +476,9 @@
                                 and <span class="work__project--caption--highlight">increased total conversion rate by
                                     1.12%</span>
                             </span>
-                            <span class="accordion__header--icon"></span>
+                            <img src="assets/icon_plus.svg" class="accordion__header--icon">
                         </div><!-- /.accordion__header -->
+
                         <div class="accordion__body">
                             <div class="accordion__body--content">
                                 <span class="accordion__body--content--heading">Optimized Sales Process and Lead
@@ -590,7 +628,6 @@
                     </video>
                 </div>
 
-
                 <span class="work__project--caption">
                     Crafted gamified milestone elements which <span class="work__project--caption--highlight">increased
                         user
@@ -603,10 +640,10 @@
                 </div>
 
                 <span class="work__project--caption">
-                    Designed a seamless<span class="work__project--caption--highlight"> application experience on the
-                        go</span>
-                    which significantly <span class="work__project--caption--highlight">increased session
-                        durations</span>.
+                    Designed a <span class="work__project--caption--highlight">responsive website</span> that
+                    effectively <span class="work__project--caption--highlight">communicates complex cybersecurity
+                        concepts</span> through <span class="work__project--caption--highlight">intuitive visuals and
+                        clear messaging</span>
                 </span>
 
                 <div class="work__project--block">
@@ -759,476 +796,635 @@
                         product</span>
                 </span>
             </div>
-            <div class="modal__close--button"></div>
+            <div class="modal__close--button">
+                <img src="assets/icon_plus.svg" class="modal__close--icon">
+            </div>
         </section>
 
-        <section>
-            <p style="margin-top: 120px;">
-                ReaQta is a cybersecurity company that provides advanced endpoint protection and detection solutions.
-            </p>
+        <!-- WORK RENOFI END -->
 
-            <div class="slideshow work__project--block--video no-autoplay">
-                <div class="browser">
-                    <div class="browser__header">
-                        <div class="browser__header--control browser__header--control--close tooltip">
-                            <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+        <!-- WORK REAQTA START -->
+
+        <section>
+
+            <div class="work__cover" style="background: linear-gradient(to bottom right, #002662, #0F7A9F);">
+
+                <div class="work__cover--media--wrapper">
+                    <video class="work__cover--media work__cover--media--left" playsinline preload="auto" autoplay muted
+                        loop>
+                        <source src="assets/reaqta/reaqta_video_2_cover.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <video class="work__cover--media work__cover--media--center" playsinline preload="auto" autoplay
+                        muted loop>
+                        <source src="assets/reaqta/reaqta_website_1_top_cover.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <video class="work__cover--media work__cover--media--right" playsinline preload="auto" autoplay
+                        muted loop>
+                        <source src="assets/reaqta/reaqta_video_4_cover.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="work__cover--gradient"></div>
+                <div class="work__cover--text">
+                    <div class="work__cover--heading">Cybersecurity • SaaS • B2B</div>
+                    <div class="work__cover--title">ReaQta (now IBM Security<span
+                            class="symbol__register--superscript">®</span>)</div>
+                </div>
+                <img src="assets/icon_plus.svg" class="work__cover--open--button">
+
+            </div>
+
+            <section class="modal">
+                <div class="modal__content">
+                    <div class="modal__pull--bar">
+                        <div class="modal__pull--indicator"></div>
+                    </div>
+                    <span class="close"></span>
+
+                    <h2 class="work__title">
+                        ReaQta
+                    </h2>
+                    <h2 class="work__subtitle">
+                        Cybersecurity • SaaS• B2B, B2C, B2B2C • Design Lead • NL • Remote
+                    </h2>
+
+                    <p class="work__chip--wrapper">
+                        <span class="work__chip">Product Design</span>
+                        <span class="work__chip">Usability Testing</span>
+                        <span class="work__chip">Prototyping</span>
+                        <span class="work__chip">Cross-Platform Design</span>
+                        <span class="work__chip">Interaction Design</span>
+                        <span class="work__chip">UX/UI Design</span>
+                        <span class="work__chip">User Flow Design</span>
+                        <span class="work__chip">Design System</span>
+                        <span class="work__chip">Brand Design</span>
+                        <span class="work__chip">Visual Design</span>
+                        <span class="work__chip">Website Design</span>
+                        <span class="work__chip">Copywriting</span>
+                        <span class="work__chip">Illustration</span>
+                        <span class="work__chip">Presentation Design</span>
+                        <span class="work__chip">Motion Design</span>
+                        <span class="work__chip">Accessibility (WCAG)</span>
+                    </p>
+
+                    <p class="work__description">
+                        Designed an A.I. powered platform for ReaQta (now IBM Security®), for detecting new and unknown
+                        threats, from ransomware to sophisticated file-less and in-memory attacks, and remediating them
+                        in near real time.
+                        <br><br>
+                        Collaborated directly with the CEO and the engineering team in a fully remote environment, to
+                        validate design decisions through real-world testing and client feedback.
+                    </p>
+
+                    <div class="slideshow work__project--block--video no-autoplay">
+                        <div class="browser">
+                            <div class="browser__header">
+                                <div class="browser__header--control browser__header--control--close tooltip">
+                                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                                </div>
+                                <div class="browser__header--control browser__header--control--minimize tooltip">
+                                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                                </div>
+                                <div class="browser__header--control browser__header--control--expand tooltip">
+                                    <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+                                </div>
+                                <div class="browser__header--title"><span class="symbol">&#129107;</span> Scrollable
+                                    content <span class="symbol">&#129107;</span></div>
+                            </div>
+                            <div class="browser__content">
+                                <div class="slideshow__slide">
+                                    <video class="work__project--block--video--slideshow" playsinline preload="auto"
+                                        autoplay muted loop>
+                                        <source src="assets/reaqta/reaqta_website_1_top.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                    <img src="assets/reaqta/reaqta_website_1_bottom.svg" alt="ReaQta Website 1"
+                                        class="browser__content--img">
+                                </div>
+                                <img class="slideshow__slide" src="assets/reaqta/reaqta_website_2.svg"
+                                    alt="ReaQta Website 2">
+                                <img class="slideshow__slide" src="assets/reaqta/reaqta_website_3.svg"
+                                    alt="ReaQta Website 3">
+                                <img class="slideshow__slide" src="assets/reaqta/reaqta_website_4.svg"
+                                    alt="ReaQta Website 4">
+                                <img class="slideshow__slide" src="assets/reaqta/reaqta_website_5.svg"
+                                    alt="ReaQta Website 5">
+                            </div>
                         </div>
-                        <div class="browser__header--control browser__header--control--minimize tooltip">
-                            <span class="tooltiptext">Out of order&nbsp; 🚧</span>
-                        </div>
-                        <div class="browser__header--control browser__header--control--expand tooltip">
-                            <span class="tooltiptext">Out of order&nbsp; 🚧</span>
+
+                        <div class="slideshow__thumbnail--wrapper">
+                            <img class="slideshow__thumbnail active" src="assets/reaqta/reaqta_website_1_thumbnail.svg"
+                                alt="ReaQta Website Thumbnail 1">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_2.svg"
+                                alt="ReaQta Website Thumbnail 2">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_3.svg"
+                                alt="ReaQta Website Thumbnail 3">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_4.svg"
+                                alt="ReaQta Website Thumbnail 4">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_5.svg"
+                                alt="ReaQta Website Thumbnail 5">
                         </div>
                     </div>
-                    <div class="browser__content">
-                        <div class="slideshow__slide">
-                            <video class="work__project--block--video--slideshow" playsinline preload="auto" autoplay
-                                muted loop>
-                                <source src="assets/reaqta/reaqta_website_1_top.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
-                            <img src="assets/reaqta/reaqta_website_1_bottom.svg" alt="ReaQta Website 1"
-                                class="browser__content--img">
+
+                    <span class="work__project--caption">
+                        Developed a <span class="work__project--caption--highlight">responsive website</span> that <span
+                            class="work__project--caption--highlight">simplifies
+                            complex cybersecurity
+                            concepts</span> with <span class="work__project--caption--highlight">clear messaging</span>
+                    </span>
+
+
+                    <div class="work__project--block">
+                        <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                            <source src="assets/reaqta/reaqta_video_3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <span class="work__project--caption">
+                        Crafted<span class="work__project--caption--highlight"> subtle animations</span> that <span
+                            class="work__project--caption--highlight">enhance user
+                            engagement</span> without distracting from core content
+                    </span>
+
+                    <div class="work__project--block">
+                        <img src="assets/reaqta/reaqta_website_mobile.svg" alt="ReaQta Website Mobile"
+                            class="work__project--block--image">
+                    </div>
+
+                    <span class="work__project--caption">
+                        Delivered a <span class="work__project--caption--highlight">fully responsive mobile
+                            experience</span> that maintains <span class="work__project--caption--highlight">visual
+                            impact</span> and <span class="work__project--caption--highlight">information
+                            hierarchy</span>
+                    </span>
+
+                    <div class="work__project--block">
+                        <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                            <source src="assets/reaqta/reaqta_video_4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <span class="work__project--caption">
+                        Crafted a login page that <span class="work__project--caption--highlight">strengthens brand
+                            recognition</span> and <span class="work__project--caption--highlight">increases user
+                            emotional
+                            connection</span>
+                    </span>
+
+
+                    <div class="slideshow">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_1.svg"
+                            alt="ReaQta platform interface screen 1">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_2.svg"
+                            alt="ReaQta platform interface screen 2">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_3.svg"
+                            alt="ReaQta platform interface screen 3">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_4.svg"
+                            alt="ReaQta platform interface screen 4">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_5.svg"
+                            alt="ReaQta platform interface screen 5">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_6.svg"
+                            alt="ReaQta platform interface screen 6">
+
+                        <div class="slideshow__thumbnail--wrapper">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_1.svg"
+                                alt="Thumbnail for ReaQta platform screen 1">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_2.svg"
+                                alt="Thumbnail for ReaQta platform screen 2">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_3.svg"
+                                alt="Thumbnail for ReaQta platform screen 3">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_4.svg"
+                                alt="Thumbnail for ReaQta platform screen 4">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_5.svg"
+                                alt="Thumbnail for ReaQta platform screen 5">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_6.svg"
+                                alt="Thumbnail for ReaQta platform screen 6">
                         </div>
-                        <img class="slideshow__slide" src="assets/reaqta/reaqta_website_2.svg" alt="ReaQta Website 2">
-                        <img class="slideshow__slide" src="assets/reaqta/reaqta_website_3.svg" alt="ReaQta Website 3">
-                        <img class="slideshow__slide" src="assets/reaqta/reaqta_website_4.svg" alt="ReaQta Website 4">
-                        <img class="slideshow__slide" src="assets/reaqta/reaqta_website_5.svg" alt="ReaQta Website 5">
+                    </div>
+
+                    <span class="work__project--caption">
+                        Designed a <span class="work__project--caption--highlight">leading AI cybersecurity
+                            platform</span> with <span class="work__project--caption--highlight">easy-to-use
+                            interface</span> and <span class="work__project--caption--highlight">clear</span>, <span
+                            class="work__project--caption--highlight">
+                            actionable statistics</span>
+                    </span>
+
+                    <div class="work__project--block">
+                        <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                            <source src="assets/reaqta/reaqta_video_2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+
+                    <span class="work__project--caption">
+                        Built an <span class="work__project--caption--highlight">intuitive incident response interface</span> tailored for <span class="work__project--caption--highlight">both novel and
+                            power users</span>
+                    </span>
+
+                    <div class="slideshow work__project--block--content">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_deck_1.svg"
+                            alt="ReaQta presentation deck slide 1">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_deck_2.svg"
+                            alt="ReaQta presentation deck slide 2">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_deck_3.svg"
+                            alt="ReaQta presentation deck slide 3">
+                    </div>
+
+                    <span class="work__project--caption">
+                        Designed<span class="work__project--caption--highlight"> multiple presentations</span> that
+                        <span class="work__project--caption--highlight">supported the company's successful acquisitiong by IBM</span>
+                    </span>
+
+                    <div class="slideshow work__project--block--content">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_1.svg"
+                            alt="ReaQta brand book page 1">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_2.svg"
+                            alt="ReaQta brand book page 2">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_3.svg"
+                            alt="ReaQta brand book page 3">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_4.svg"
+                            alt="ReaQta brand book page 4">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_5.svg"
+                            alt="ReaQta brand book page 5">
+                        <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_6.svg"
+                            alt="ReaQta brand book page 6">
+
+                        <div class="slideshow__thumbnail--wrapper">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_1.svg"
+                                alt="Thumbnail for ReaQta brand book page 1">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_2.svg"
+                                alt="Thumbnail for ReaQta brand book page 2">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_3.svg"
+                                alt="Thumbnail for ReaQta brand book page 3">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_4.svg"
+                                alt="Thumbnail for ReaQta brand book page 4">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_5.svg"
+                                alt="Thumbnail for ReaQta brand book page 5">
+                            <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_6.svg"
+                                alt="Thumbnail for ReaQta brand book page 6">
+                        </div>
+                    </div>
+
+                    <span class="work__project--caption">
+                        <span class="work__project--caption--highlight">Redesigned the logo</span> and <span class="work__project--caption--highlight">developed</span> a brand book to <span
+                            class="work__project--caption--highlight">guide consistent brand growth and application</span>
+                    </span>
+
+                </div>
+                <div class="modal__close--button">
+                    <img src="assets/icon_plus.svg" class="modal__close--icon">
+                </div>
+            </section>
+
+            <!-- WORK REAQTA END -->
+
+            <!-- WORK AIC START -->
+
+            <section>
+                <p>
+                    Alpha Intelligence Capital is a leading investment firm specializing in AI--driven financial
+                    solutions.
+                    Used
+                    AI to generate images, then used a different AI tool to animate them, and After Effects to glue them
+                    together into one eamless loopable video. Alpha Intelligence Capital (aic) is an entrepreneurs--led,
+                    entrepreneurs--invested, family of global venture capital funds investing in AI companies.
+
+                    I was asked to redesign the_website_and thoroughly enjoyed working on this one.
+
+                    To see the current implementation of the_website_check www.aicapital.ai
+                </p>
+
+                <div class="work__project--block">
+                    <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                        <source src="assets/aic/aic_video_1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="work__project--block">
+                    <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                        <source src="assets/aic/aic_video_2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <span class="work__project--caption">
+                    Learning section designed to educate users about AI and its applications
+                </span>
+
+                <div class="work__project--block">
+                    <img src="assets/aic/aic_website_1.webp" alt="AIC website homepage design"
+                        class="work__project--block--image">
+                </div>
+
+                <div class="work__project--block">
+                    <img src="assets/aic/aic_website_2.webp" alt="AIC website about page design"
+                        class="work__project--block--image">
+                </div>
+
+                <div class="work__project--block">
+                    <img src="assets/aic/aic_website_3.webp" alt="AIC website portfolio page design"
+                        class="work__project--block--image">
+                </div>
+
+                <div class="work__project--block">
+                    <img src="assets/aic/aic_website_Mobile.webp" alt="AIC website mobile version design"
+                        class="work__project--block--image">
+                </div>
+
+                <div class="work__project--block">
+                    <img src="assets/aic/aic_website_4.webp" alt="AIC website contact page design"
+                        class="work__project--block--image">
+                </div>
+
+            </section>
+
+            <!-- WORK AIC END -->
+
+            <!-- WORK WATCHTOWR START -->
+
+            <section>
+                <p>
+                    watchtowr is a platform that provides comprehensive security solutions for digital assets, including
+                    cryptocurrencies and NFTs. It offers a range of services such as wallet protection, transaction
+                    monitoring,
+                    and risk assessment to help users safeguard their digital investments. The platform aims to enhance
+                    the
+                    security and trustworthiness of the digital asset ecosystem by providing tools and resources for
+                    users
+                    to
+                    protect their assets from potential threats and vulnerabilities.
+                </p>
+
+                <div class="work__project--block">
+                    <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                        <source src="assets/watchtowr/watchtowr_video_1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="work__project--block">
+                    <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                        <source src="assets/watchtowr/watchtowr_video_2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div class="work__project--block">
+                    <img src="assets/watchtowr/watchtowr_website_1.svg" alt="watchTowr website homepage design"
+                        class="work__project--block--image">
+                </div>
+
+                <div class="work__project--block">
+                    <img src="assets/watchtowr/watchtowr_website_2.svg" alt="watchTowr website features page design"
+                        class="work__project--block--image">
+                </div>
+
+                <div class="work__project--block">
+                    <img src="assets/watchtowr/watchtowr_website_mobile.svg"
+                        alt="watchTowr website mobile version design" class="work__project--block--image">
+                </div>
+
+                <div class="slideshow work__project--block--content">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_1.png"
+                        alt="watchTowr brand book page 1">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_2.svg"
+                        alt="watchTowr brand book page 2">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_3.svg"
+                        alt="watchTowr brand book page 3">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_4.svg"
+                        alt="watchTowr brand book page 4">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_5.svg"
+                        alt="watchTowr brand book page 5">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_6.svg"
+                        alt="watchTowr brand book page 6">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_7.png"
+                        alt="watchTowr brand book page 7">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_8.svg"
+                        alt="watchTowr brand book page 8">
+
+                    <div class="slideshow__thumbnail--wrapper">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_1.png"
+                            alt="Thumbnail for watchTowr brand book page 1">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_2.svg"
+                            alt="Thumbnail for watchTowr brand book page 2">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_3.svg"
+                            alt="Thumbnail for watchTowr brand book page 3">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_4.svg"
+                            alt="Thumbnail for watchTowr brand book page 4">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_5.svg"
+                            alt="Thumbnail for watchTowr brand book page 5">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_6.svg"
+                            alt="Thumbnail for watchTowr brand book page 6">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_7.png"
+                            alt="Thumbnail for watchTowr brand book page 7">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_8.svg"
+                            alt="Thumbnail for watchTowr brand book page 8">
                     </div>
                 </div>
 
-                <div class="slideshow__thumbnail--wrapper">
-                    <img class="slideshow__thumbnail active" src="assets/reaqta/reaqta_website_1_thumbnail.svg"
-                        alt="ReaQta Website Thumbnail 1">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_2.svg"
-                        alt="ReaQta Website Thumbnail 2">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_3.svg"
-                        alt="ReaQta Website Thumbnail 3">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_4.svg"
-                        alt="ReaQta Website Thumbnail 4">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_website_5.svg"
-                        alt="ReaQta Website Thumbnail 5">
+                <div class="slideshow work__project--block--content">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_1.png"
+                        alt="watchTowr company photo 1">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_2.png"
+                        alt="watchTowr company photo 2">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_3.png"
+                        alt="watchTowr company photo 3">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_4.png"
+                        alt="watchTowr company photo 4">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_5.png"
+                        alt="watchTowr company photo 5">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_6.png"
+                        alt="watchTowr company photo 6">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_7.png"
+                        alt="watchTowr company photo 7">
+
+                    <div class="slideshow__thumbnail--wrapper">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_1.png"
+                            alt="Thumbnail for watchTowr company photo 1">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_2.png"
+                            alt="Thumbnail for watchTowr company photo 2">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_3.png"
+                            alt="Thumbnail for watchTowr company photo 3">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_4.png"
+                            alt="Thumbnail for watchTowr company photo 4">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_5.png"
+                            alt="Thumbnail for watchTowr company photo 5">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_6.png"
+                            alt="Thumbnail for watchTowr company photo 6">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_7.png"
+                            alt="Thumbnail for watchTowr company photo 7">
+                    </div>
                 </div>
-            </div>
 
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/reaqta/reaqta_video_3.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="work__project--block">
-                <img src="assets/reaqta/reaqta_website_mobile.svg" alt="ReaQta Website Mobile"
-                    class="work__project--block--image">
-            </div>
-
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/reaqta/reaqta_video_4.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/reaqta/reaqta_video_2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="slideshow">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_1.svg"
-                    alt="ReaQta platform interface screen 1">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_2.svg"
-                    alt="ReaQta platform interface screen 2">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_3.svg"
-                    alt="ReaQta platform interface screen 3">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_4.svg"
-                    alt="ReaQta platform interface screen 4">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_5.svg"
-                    alt="ReaQta platform interface screen 5">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_platform_6.svg"
-                    alt="ReaQta platform interface screen 6">
-
-                <div class="slideshow__thumbnail--wrapper">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_1.svg"
-                        alt="Thumbnail for ReaQta platform screen 1">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_2.svg"
-                        alt="Thumbnail for ReaQta platform screen 2">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_3.svg"
-                        alt="Thumbnail for ReaQta platform screen 3">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_4.svg"
-                        alt="Thumbnail for ReaQta platform screen 4">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_5.svg"
-                        alt="Thumbnail for ReaQta platform screen 5">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_platform_6.svg"
-                        alt="Thumbnail for ReaQta platform screen 6">
+                <div class="work__project--block">
+                    <img src="assets/watchtowr/watchtowr_labs_presentation.svg" alt="watchTowr Labs presentation slide"
+                        class="work__project--block--image">
                 </div>
-            </div>
 
-            <div class="slideshow work__project--block--content">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_deck_1.svg"
-                    alt="ReaQta presentation deck slide 1">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_deck_2.svg"
-                    alt="ReaQta presentation deck slide 2">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_deck_3.svg"
-                    alt="ReaQta presentation deck slide 3">
-            </div>
+                <div class="slideshow work__project--block--content">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_1.svg"
+                        alt="watchTowr Labs brand book page 1">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_2.svg"
+                        alt="watchTowr Labs brand book page 2">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_3.svg"
+                        alt="watchTowr Labs brand book page 3">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_4.svg"
+                        alt="watchTowr Labs brand book page 4">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_5.svg"
+                        alt="watchTowr Labs brand book page 5">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_6.svg"
+                        alt="watchTowr Labs brand book page 6">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_7.svg"
+                        alt="watchTowr Labs brand book page 7">
+                    <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_8.svg"
+                        alt="watchTowr Labs brand book page 8">
 
-            <div class="slideshow work__project--block--content">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_1.svg"
-                    alt="ReaQta brand book page 1">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_2.svg"
-                    alt="ReaQta brand book page 2">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_3.svg"
-                    alt="ReaQta brand book page 3">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_4.svg"
-                    alt="ReaQta brand book page 4">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_5.svg"
-                    alt="ReaQta brand book page 5">
-                <img class="slideshow__slide" src="assets/reaqta/reaqta_brand_book_6.svg"
-                    alt="ReaQta brand book page 6">
-
-                <div class="slideshow__thumbnail--wrapper">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_1.svg"
-                        alt="Thumbnail for ReaQta brand book page 1">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_2.svg"
-                        alt="Thumbnail for ReaQta brand book page 2">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_3.svg"
-                        alt="Thumbnail for ReaQta brand book page 3">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_4.svg"
-                        alt="Thumbnail for ReaQta brand book page 4">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_5.svg"
-                        alt="Thumbnail for ReaQta brand book page 5">
-                    <img class="slideshow__thumbnail" src="assets/reaqta/reaqta_brand_book_6.svg"
-                        alt="Thumbnail for ReaQta brand book page 6">
+                    <div class="slideshow__thumbnail--wrapper">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_1.svg"
+                            alt="Thumbnail for watchTowr Labs brand book page 1">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_2.svg"
+                            alt="Thumbnail for watchTowr Labs brand book page 2">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_3.svg"
+                            alt="Thumbnail for watchTowr Labs brand book page 3">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_4.svg"
+                            alt="Thumbnail for watchTowr Labs brand book page 4">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_5.svg"
+                            alt="Thumbnail for watchTowr Labs brand book page 5">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_6.svg"
+                            alt="Thumbnail for watchTowr Labs brand book page 6">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_7.svg"
+                            alt="Thumbnail for watchTowr Labs brand book page 7">
+                        <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_8.svg"
+                            alt="Thumbnail for watchTowr Labs brand book page 8">
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <section>
-            <p>
-                Alpha Intelligence Capital is a leading investment firm specializing in AI--driven financial solutions.
-                Used
-                AI to generate images, then used a different AI tool to animate them, and After Effects to glue them
-                together into one eamless loopable video. Alpha Intelligence Capital (aic) is an entrepreneurs--led,
-                entrepreneurs--invested, family of global venture capital funds investing in AI companies.
+            </section>
 
-                I was asked to redesign the_website_and thoroughly enjoyed working on this one.
+            <!-- WORK WATCHTOWR END -->
 
-                To see the current implementation of the_website_check www.aicapital.ai
-            </p>
+            <!-- WORK SERENA WILLIAMS START -->
 
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/aic/aic_video_1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+            <section>
+                <p>
+                    Designed a complete checkout experience for serena_williams first online shop.
+                </p>
 
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/aic/aic_video_2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <span class="work__project--caption">
-                Learning section designed to educate users about AI and its applications
-            </span>
-
-            <div class="work__project--block">
-                <img src="assets/aic/aic_website_1.webp" alt="AIC website homepage design"
-                    class="work__project--block--image">
-            </div>
-
-            <div class="work__project--block">
-                <img src="assets/aic/aic_website_2.webp" alt="AIC website about page design"
-                    class="work__project--block--image">
-            </div>
-
-            <div class="work__project--block">
-                <img src="assets/aic/aic_website_3.webp" alt="AIC website portfolio page design"
-                    class="work__project--block--image">
-            </div>
-
-            <div class="work__project--block">
-                <img src="assets/aic/aic_website_Mobile.webp" alt="AIC website mobile version design"
-                    class="work__project--block--image">
-            </div>
-
-            <div class="work__project--block">
-                <img src="assets/aic/aic_website_4.webp" alt="AIC website contact page design"
-                    class="work__project--block--image">
-            </div>
-
-        </section>
-
-        <section>
-            <p>
-                watchtowr is a platform that provides comprehensive security solutions for digital assets, including
-                cryptocurrencies and NFTs. It offers a range of services such as wallet protection, transaction
-                monitoring,
-                and risk assessment to help users safeguard their digital investments. The platform aims to enhance the
-                security and trustworthiness of the digital asset ecosystem by providing tools and resources for users
-                to
-                protect their assets from potential threats and vulnerabilities.
-            </p>
-
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/watchtowr/watchtowr_video_1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/watchtowr/watchtowr_video_2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="work__project--block">
-                <img src="assets/watchtowr/watchtowr_website_1.svg" alt="watchTowr website homepage design"
-                    class="work__project--block--image">
-            </div>
-
-            <div class="work__project--block">
-                <img src="assets/watchtowr/watchtowr_website_2.svg" alt="watchTowr website features page design"
-                    class="work__project--block--image">
-            </div>
-
-            <div class="work__project--block">
-                <img src="assets/watchtowr/watchtowr_website_mobile.svg" alt="watchTowr website mobile version design"
-                    class="work__project--block--image">
-            </div>
-
-            <div class="slideshow work__project--block--content">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_1.png"
-                    alt="watchTowr brand book page 1">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_2.svg"
-                    alt="watchTowr brand book page 2">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_3.svg"
-                    alt="watchTowr brand book page 3">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_4.svg"
-                    alt="watchTowr brand book page 4">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_5.svg"
-                    alt="watchTowr brand book page 5">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_6.svg"
-                    alt="watchTowr brand book page 6">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_7.png"
-                    alt="watchTowr brand book page 7">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_brand_book_8.svg"
-                    alt="watchTowr brand book page 8">
-
-                <div class="slideshow__thumbnail--wrapper">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_1.png"
-                        alt="Thumbnail for watchTowr brand book page 1">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_2.svg"
-                        alt="Thumbnail for watchTowr brand book page 2">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_3.svg"
-                        alt="Thumbnail for watchTowr brand book page 3">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_4.svg"
-                        alt="Thumbnail for watchTowr brand book page 4">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_5.svg"
-                        alt="Thumbnail for watchTowr brand book page 5">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_6.svg"
-                        alt="Thumbnail for watchTowr brand book page 6">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_7.png"
-                        alt="Thumbnail for watchTowr brand book page 7">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_brand_book_8.svg"
-                        alt="Thumbnail for watchTowr brand book page 8">
+                <div class="work__project--block">
+                    <img src="assets/Serena Williams/serena_williams_X.png"
+                        alt="Serena Williams X post about online shop" class="work__project--block--image">
                 </div>
-            </div>
 
-            <div class="slideshow work__project--block--content">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_1.png"
-                    alt="watchTowr company photo 1">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_2.png"
-                    alt="watchTowr company photo 2">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_3.png"
-                    alt="watchTowr company photo 3">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_4.png"
-                    alt="watchTowr company photo 4">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_5.png"
-                    alt="watchTowr company photo 5">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_6.png"
-                    alt="watchTowr company photo 6">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_photo_7.png"
-                    alt="watchTowr company photo 7">
-
-                <div class="slideshow__thumbnail--wrapper">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_1.png"
-                        alt="Thumbnail for watchTowr company photo 1">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_2.png"
-                        alt="Thumbnail for watchTowr company photo 2">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_3.png"
-                        alt="Thumbnail for watchTowr company photo 3">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_4.png"
-                        alt="Thumbnail for watchTowr company photo 4">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_5.png"
-                        alt="Thumbnail for watchTowr company photo 5">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_6.png"
-                        alt="Thumbnail for watchTowr company photo 6">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_photo_7.png"
-                        alt="Thumbnail for watchTowr company photo 7">
+                <div class="work__project--block">
+                    <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                        <source src="assets/Serena Williams/serena_williams_video_1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-            </div>
 
-            <div class="work__project--block">
-                <img src="assets/watchtowr/watchtowr_labs_presentation.svg" alt="watchTowr Labs presentation slide"
-                    class="work__project--block--image">
-            </div>
-
-            <div class="slideshow work__project--block--content">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_1.svg"
-                    alt="watchTowr Labs brand book page 1">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_2.svg"
-                    alt="watchTowr Labs brand book page 2">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_3.svg"
-                    alt="watchTowr Labs brand book page 3">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_4.svg"
-                    alt="watchTowr Labs brand book page 4">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_5.svg"
-                    alt="watchTowr Labs brand book page 5">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_6.svg"
-                    alt="watchTowr Labs brand book page 6">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_7.svg"
-                    alt="watchTowr Labs brand book page 7">
-                <img class="slideshow__slide" src="assets/watchtowr/watchtowr_labs_brand_book_8.svg"
-                    alt="watchTowr Labs brand book page 8">
-
-                <div class="slideshow__thumbnail--wrapper">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_1.svg"
-                        alt="Thumbnail for watchTowr Labs brand book page 1">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_2.svg"
-                        alt="Thumbnail for watchTowr Labs brand book page 2">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_3.svg"
-                        alt="Thumbnail for watchTowr Labs brand book page 3">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_4.svg"
-                        alt="Thumbnail for watchTowr Labs brand book page 4">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_5.svg"
-                        alt="Thumbnail for watchTowr Labs brand book page 5">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_6.svg"
-                        alt="Thumbnail for watchTowr Labs brand book page 6">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_7.svg"
-                        alt="Thumbnail for watchTowr Labs brand book page 7">
-                    <img class="slideshow__thumbnail" src="assets/watchtowr/watchtowr_labs_brand_book_8.svg"
-                        alt="Thumbnail for watchTowr Labs brand book page 8">
+                <div class="work__project--block">
+                    <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                        <source src="assets/Serena Williams/serena_williams_video_2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-            </div>
 
+                <div class="work__project--block">
+                    <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                        <source src="assets/Serena Williams/serena_williams_video_3.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
 
-        </section>
+            </section>
 
-        <section>
-            <p>
-                Designed a complete checkout experience for serena_williams first online shop.
-            </p>
+            <!-- WORK SERENA WILLIAMS END -->
 
-            <div class="work__project--block">
-                <img src="assets/Serena Williams/serena_williams_X.png" alt="Serena Williams X post about online shop"
-                    class="work__project--block--image">
-            </div>
+            <!-- WORK EXODUS START -->
 
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/Serena Williams/serena_williams_video_1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+            <section>
+                <p>
+                    I love blockchain technologies and the transparency they bring to the world. I was looking for the
+                    best
+                    multi--currency wallet out there to store my assets, and exodus_wallet came close to that.
 
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/Serena Williams/serena_williams_video_2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+                    I was missing some features and customizability in their current version of the software, so I
+                    decided
+                    to
+                    take a shot at redesigning it. I got carried and eventually made several prototypes in Principle.
+                </p>
 
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/Serena Williams/serena_williams_video_3.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+                <div class="work__project--block">
+                    <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                        <source src="assets/exodus/exodus_video_1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
 
-        </section>
+                <div class="work__project--block">
+                    <img src="assets/exodus/exodus_1.svg" alt="Exodus wallet dashboard with cryptocurrency balances"
+                        class="work__project--block--image">
+                </div>
+                <div class="work__project--block">
+                    <img src="assets/exodus/exodus_2.svg" alt="Exodus wallet transaction history view"
+                        class="work__project--block--image">
+                </div>
+                <div class="work__project--block">
+                    <img src="assets/exodus/exodus_3.svg" alt="Exodus wallet settings interface"
+                        class="work__project--block--image">
+                </div>
+                <div class="work__project--block">
+                    <img src="assets/exodus/exodus_4.svg" alt="Exodus wallet exchange feature"
+                        class="work__project--block--image">
+                </div>
+                <div class="work__project--block">
+                    <img src="assets/exodus/exodus_5.svg" alt="Exodus wallet portfolio analytics"
+                        class="work__project--block--image">
+                </div>
+                <div class="work__project--block">
+                    <img src="assets/exodus/exodus_6.svg" alt="Exodus wallet cryptocurrency details page"
+                        class="work__project--block--image">
+                </div>
+                <div class="work__project--block">
+                    <img src="assets/exodus/exodus_7.png" alt="Exodus wallet MacOS widget interface design"
+                        class="work__project--block--image">
+                </div>
 
+            </section>
 
+            <!-- WORK EXODUS END -->
 
-        <section>
-            <p>
-                I love blockchain technologies and the transparency they bring to the world. I was looking for the best
-                multi--currency wallet out there to store my assets, and exodus_wallet came close to that.
+            <section>
+                <p>
+                    I love blockchain technologies and the transparency they bring to the world. Origin Trail is a
+                    company...
+                </p>
 
-                I was missing some features and customizability in their current version of the software, so I decided
-                to
-                take a shot at redesigning it. I got carried and eventually made several prototypes in Principle.
-            </p>
+                <div class="work__project--block">
+                    <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
+                        <source src="assets/OriginTrail/origintrail_video_1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="work__project--block">
+                    <img src="assets/OriginTrail/origintrail_gif.gif" alt="OriginTrail blockchain visualization"
+                        class="work__project--block--image">
+                </div>
+            </section>
 
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/exodus/exodus_video_1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="work__project--block">
-                <img src="assets/exodus/exodus_1.svg" alt="Exodus wallet dashboard with cryptocurrency balances"
-                    class="work__project--block--image">
-            </div>
-            <div class="work__project--block">
-                <img src="assets/exodus/exodus_2.svg" alt="Exodus wallet transaction history view"
-                    class="work__project--block--image">
-            </div>
-            <div class="work__project--block">
-                <img src="assets/exodus/exodus_3.svg" alt="Exodus wallet settings interface"
-                    class="work__project--block--image">
-            </div>
-            <div class="work__project--block">
-                <img src="assets/exodus/exodus_4.svg" alt="Exodus wallet exchange feature"
-                    class="work__project--block--image">
-            </div>
-            <div class="work__project--block">
-                <img src="assets/exodus/exodus_5.svg" alt="Exodus wallet portfolio analytics"
-                    class="work__project--block--image">
-            </div>
-            <div class="work__project--block">
-                <img src="assets/exodus/exodus_6.svg" alt="Exodus wallet cryptocurrency details page"
-                    class="work__project--block--image">
-            </div>
-            <div class="work__project--block">
-                <img src="assets/exodus/exodus_7.png" alt="Exodus wallet MacOS widget interface design"
-                    class="work__project--block--image">
-            </div>
-
-        </section>
-
-
-        <section>
-            <p>
-                I love blockchain technologies and the transparency they bring to the world. Origin Trail is a
-                company...
-            </p>
-
-            <div class="work__project--block">
-                <video class="work__project--block--video" playsinline preload="auto" autoplay muted loop>
-                    <source src="assets/OriginTrail/origintrail_video_1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="work__project--block">
-                <img src="assets/OriginTrail/origintrail_gif.gif" alt="OriginTrail blockchain visualization"
-                    class="work__project--block--image">
-            </div>
-        </section>
-
-        <script src="./slideshow.js"></script>
-        <script src="./index.js"></script>
-        <script src="./modal.js"></script>
-        <script src="./accordion.js"></script>
+            <script src="./slideshow.js"></script>
+            <script src="./index.js"></script>
+            <script src="./modal.js"></script>
+            <script src="./accordion.js"></script>
 </body>
 
 </html>

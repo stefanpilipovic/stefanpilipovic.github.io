@@ -52,6 +52,7 @@
 }
 
 @media (max-width: 660px) {
+    
     .about__content {
         flex-direction: column;
     }
@@ -70,7 +71,7 @@
     .about,
     .about__title,
     .about__text {
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 

@@ -20,6 +20,17 @@
     box-sizing: border-box;
     border: #1b1c1e 1px solid;
     width: 100%;
+    position: relative;
+}
+
+.browser__header--title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #bfbfbf;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
 }
 
 .browser__header--control {
@@ -58,6 +69,12 @@
     padding: 0;
     max-height: 610px;
     overflow-y: auto;
+}
+
+/* Ensure slides inside browser have proper border radius */
+.browser__content .slideshow__slide {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .browser__content--img {
