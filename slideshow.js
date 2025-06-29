@@ -22,6 +22,19 @@
 
     // Update the current index
     slideshow.currentIndex = index;
+    
+    // Reset scroll position if this slideshow is inside a browser preview
+    // First try to find browser content inside the slideshow container
+    const browserContent = slideshow.container.querySelector('.browser__content');
+    if (browserContent) {
+        browserContent.scrollTop = 0;
+    } else {
+        // If not found inside, try to find it as a parent or ancestor
+        const browserContentParent = slideshow.container.closest('.slideshow').querySelector('.browser__content');
+        if (browserContentParent) {
+            browserContentParent.scrollTop = 0;
+        }
+    }
 }
 
 

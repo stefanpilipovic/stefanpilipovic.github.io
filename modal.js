@@ -27,6 +27,38 @@ function openModal(modalElement) {
   // Reset scroll position
   if (currentModalContent) {
     currentModalContent.scrollTop = 0;
+    
+    // Reset scroll position of any browser preview content
+    const browserContents = currentModalContent.querySelectorAll('.browser__content');
+    browserContents.forEach(function(browserContent) {
+      browserContent.scrollTop = 0;
+    });
+    
+    // Reset any slideshows to the first slide
+    const slideshows = currentModalContent.querySelectorAll('.slideshow');
+    slideshows.forEach(function(slideshow) {
+      // Get all slides and thumbnails
+      const slides = slideshow.querySelectorAll('.slideshow__slide');
+      const thumbnails = slideshow.querySelectorAll('.slideshow__thumbnail');
+      
+      // Hide all slides except the first one
+      slides.forEach(function(slide, index) {
+        if (index === 0) {
+          slide.style.display = 'block';
+        } else {
+          slide.style.display = 'none';
+        }
+      });
+      
+      // Update thumbnails - remove active class from all and add to first
+      thumbnails.forEach(function(thumbnail, index) {
+        if (index === 0) {
+          thumbnail.classList.add('active');
+        } else {
+          thumbnail.classList.remove('active');
+        }
+      });
+    });
   }
   currentModal.scrollTop = 0;
   
@@ -49,6 +81,12 @@ function closeModal() {
   // Immediately reset scroll positions
   if (currentModalContent) {
     currentModalContent.scrollTop = 0;
+    
+    // Reset scroll position of any browser preview content
+    const browserContents = currentModalContent.querySelectorAll('.browser__content');
+    browserContents.forEach(function(browserContent) {
+      browserContent.scrollTop = 0;
+    });
   }
   currentModal.scrollTop = 0;
   
@@ -72,6 +110,12 @@ function closeModal() {
     currentModal.scrollTop = 0;
     if (currentModalContent) {
       currentModalContent.scrollTop = 0;
+      
+      // Reset scroll position of any browser preview content again
+      const browserContents = currentModalContent.querySelectorAll('.browser__content');
+      browserContents.forEach(function(browserContent) {
+        browserContent.scrollTop = 0;
+      });
     }
     
     // Clear current modal references
