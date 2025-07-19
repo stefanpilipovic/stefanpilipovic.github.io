@@ -2706,19 +2706,26 @@
                             
                             <!-- Preloader Script -->
                             <script>
-                                // Preloader functionality
+                                // Preloader functionality for main page load
                                 window.addEventListener('load', function() {
                                     const preloader = document.querySelector('.preloader');
                                     const body = document.body;
                                     
-                                    // Minimum display time for preloader (2 seconds)
-                                    const minDisplayTime = 2000;
-                                    const startTime = Date.now();
+                                    // Only wait for main page content to load, exclude modal content
+                                    const mainPageImages = document.querySelectorAll('img:not(.modal img)');
+                                    const mainPageVideos = document.querySelectorAll('video:not(.modal video)');
+                                    let loadedCount = 0;
+                                    const totalAssets = mainPageImages.length + mainPageVideos.length;
                                     
-                                    function hidePreloader() {
-                                        const elapsedTime = Date.now() - startTime;
-                                        const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
-                                        
+                                    function checkAllLoaded() {
+                                        loadedCount++;
+                                        if (loadedCount >= totalAssets) {
+                                            hideMainPreloader();
+                                        }
+                                    }
+                                    
+                                    function hideMainPreloader() {
+                                        // Minimum display time for preloader (1.5 seconds)
                                         setTimeout(() => {
                                             preloader.classList.add('fade-out');
                                             body.classList.remove('loading');
@@ -2730,56 +2737,121 @@
                                                     preloader.parentNode.removeChild(preloader);
                                                 }
                                             }, 500);
-                                        }, remainingTime);
+                                        }, 1500);
                                     }
                                     
-                                    hidePreloader();
+                                    // Load main page images only
+                                    mainPageImages.forEach(img => {
+                                        if (img.complete) {
+                                            checkAllLoaded();
+                                        } else {
+                                            img.addEventListener('load', checkAllLoaded);
+                                            img.addEventListener('error', checkAllLoaded);
+                                        }
+                                    });
+                                    
+                                    // Load main page videos only
+                                    mainPageVideos.forEach(video => {
+                                        if (video.readyState >= 3) {
+                                            checkAllLoaded();
+                                        } else {
+                                            video.addEventListener('canplaythrough', checkAllLoaded);
+                                            video.addEventListener('error', checkAllLoaded);
+                                        }
+                                    });
+                                    
+                                    // Fallback if no assets to load
+                                    if (totalAssets === 0) {
+                                        hideMainPreloader();
+                                    }
                                 });
                                 
-                                // Show preloader for navigation/content changes
-                                function showPreloader() {
+                                // Show preloader for project modal loading
+                                function showProjectPreloader() {
                                     const body = document.body;
-                                    if (!document.querySelector('.preloader')) {
-                                        const preloaderHTML = `
-                                            <div class="preloader">
-                                                <div class="preloader__content">
-                                                    <div class="preloader__spinner"></div>
-                                                    <div class="preloader__text">Loading...</div>
-                                                    <div class="preloader__progress">
-                                                        <div class="preloader__progress-bar"></div>
-                                                    </div>
+                                    const preloaderHTML = `
+                                        <div class="preloader">
+                                            <div class="preloader__content">
+                                                <div class="preloader__spinner"></div>
+                                                <div class="preloader__text">Loading Project...</div>
+                                                <div class="preloader__progress">
+                                                    <div class="preloader__progress-bar"></div>
                                                 </div>
                                             </div>
-                                        `;
-                                        body.insertAdjacentHTML('afterbegin', preloaderHTML);
-                                        body.classList.add('loading');
-                                        body.classList.remove('loaded');
+                                        </div>
+                                    `;
+                                    body.insertAdjacentHTML('afterbegin', preloaderHTML);
+                                    body.classList.add('loading');
+                                    body.classList.remove('loaded');
+                                }
+                                
+                                function hideProjectPreloader() {
+                                    const preloader = document.querySelector('.preloader');
+                                    if (preloader) {
+                                        preloader.classList.add('fade-out');
+                                        document.body.classList.remove('loading');
+                                        document.body.classList.add('loaded');
+                                        setTimeout(() => {
+                                            if (preloader.parentNode) {
+                                                preloader.parentNode.removeChild(preloader);
+                                            }
+                                        }, 500);
                                     }
                                 }
                                 
-                                // Optional: Show preloader for heavy content loading
+                                // Add preloader for project modal openings
                                 document.addEventListener('DOMContentLoaded', function() {
-                                    // Add preloader for modal openings
                                     const modalTriggers = document.querySelectorAll('.work__cover--open--button');
                                     modalTriggers.forEach(trigger => {
                                         trigger.addEventListener('click', function() {
-                                            // Brief preloader for modal content
+                                            // Show preloader for project content
+                                            showProjectPreloader();
+                                            
+                                            // Find the modal and its content
                                             const modal = this.closest('section').nextElementSibling;
                                             if (modal && modal.classList.contains('modal')) {
-                                                showPreloader();
-                                                setTimeout(() => {
-                                                    const preloader = document.querySelector('.preloader');
-                                                    if (preloader) {
-                                                        preloader.classList.add('fade-out');
-                                                        document.body.classList.remove('loading');
-                                                        document.body.classList.add('loaded');
+                                                // Wait for modal images and videos to load
+                                                const modalImages = modal.querySelectorAll('img');
+                                                const modalVideos = modal.querySelectorAll('video');
+                                                let modalLoadedCount = 0;
+                                                const totalModalAssets = modalImages.length + modalVideos.length;
+                                                
+                                                function checkModalLoaded() {
+                                                    modalLoadedCount++;
+                                                    if (modalLoadedCount >= totalModalAssets) {
+                                                        // Minimum display time for project preloader (1 second)
                                                         setTimeout(() => {
-                                                            if (preloader.parentNode) {
-                                                                preloader.parentNode.removeChild(preloader);
-                                                            }
-                                                        }, 500);
+                                                            hideProjectPreloader();
+                                                        }, 1000);
                                                     }
-                                                }, 800);
+                                                }
+                                                
+                                                // Load modal images
+                                                modalImages.forEach(img => {
+                                                    if (img.complete) {
+                                                        checkModalLoaded();
+                                                    } else {
+                                                        img.addEventListener('load', checkModalLoaded);
+                                                        img.addEventListener('error', checkModalLoaded);
+                                                    }
+                                                });
+                                                
+                                                // Load modal videos
+                                                modalVideos.forEach(video => {
+                                                    if (video.readyState >= 3) {
+                                                        checkModalLoaded();
+                                                    } else {
+                                                        video.addEventListener('canplaythrough', checkModalLoaded);
+                                                        video.addEventListener('error', checkModalLoaded);
+                                                    }
+                                                });
+                                                
+                                                // Fallback if no modal assets to load
+                                                if (totalModalAssets === 0) {
+                                                    setTimeout(() => {
+                                                        hideProjectPreloader();
+                                                    }, 1000);
+                                                }
                                             }
                                         });
                                     });
