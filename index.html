@@ -5,24 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stefan Pilipović</title>
+    
+    <!-- DNS prefetch for external domains -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
+    <!-- Preconnect for critical resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS inline or prioritized -->
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="preloader.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="navigation.css">
     <link rel="stylesheet" href="heading.css">
     <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="experience.css">
-    <link rel="stylesheet" href="work.css">
-    <link rel="stylesheet" href="browser.css">
-    <link rel="stylesheet" href="tooltip.css">
-    <link rel="stylesheet" href="slideshow.css">
-    <link rel="stylesheet" href="modal.css">
-    <link rel="stylesheet" href="accordion.css">
-    <link rel="icon" type="image/webp+xml" href="assets/favicon.svg">
+    
+    <!-- Non-critical CSS with media attribute for faster initial load -->
+    <link rel="stylesheet" href="work.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="browser.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="tooltip.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="slideshow.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="modal.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="accordion.css" media="print" onload="this.media='all'">
+    
+    <!-- Optimized font loading with font-display: swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Symbols+2&display=swap" rel="stylesheet">
+    
+    <!-- Favicon with proper MIME type -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="assets/profile_picture.webp" as="image" type="image/webp">
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -34,7 +53,18 @@
     gtag('config', 'G-XB05ZPTBJV');
 </script>
 
-<body>
+<body class="loading">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader__content">
+            <div class="preloader__spinner"></div>
+            <div class="preloader__text">Loading...</div>
+            <div class="preloader__progress">
+                <div class="preloader__progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <nav class="navigation">
         <div class="navigation__links--wrapper--left">
             <a href="#about" class="navigation__link">About</a>
@@ -2692,6 +2722,88 @@
                             <script src="./index.js"></script>
                             <script src="./modal.js"></script>
                             <script src="./accordion.js"></script>
+                            
+                            <!-- Preloader Script -->
+                            <script>
+                                // Preloader functionality
+                                window.addEventListener('load', function() {
+                                    const preloader = document.querySelector('.preloader');
+                                    const body = document.body;
+                                    
+                                    // Minimum display time for preloader (2 seconds)
+                                    const minDisplayTime = 2000;
+                                    const startTime = Date.now();
+                                    
+                                    function hidePreloader() {
+                                        const elapsedTime = Date.now() - startTime;
+                                        const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
+                                        
+                                        setTimeout(() => {
+                                            preloader.classList.add('fade-out');
+                                            body.classList.remove('loading');
+                                            body.classList.add('loaded');
+                                            
+                                            // Remove preloader from DOM after animation
+                                            setTimeout(() => {
+                                                if (preloader.parentNode) {
+                                                    preloader.parentNode.removeChild(preloader);
+                                                }
+                                            }, 500);
+                                        }, remainingTime);
+                                    }
+                                    
+                                    hidePreloader();
+                                });
+                                
+                                // Show preloader for navigation/content changes
+                                function showPreloader() {
+                                    const body = document.body;
+                                    if (!document.querySelector('.preloader')) {
+                                        const preloaderHTML = `
+                                            <div class="preloader">
+                                                <div class="preloader__content">
+                                                    <div class="preloader__spinner"></div>
+                                                    <div class="preloader__text">Loading...</div>
+                                                    <div class="preloader__progress">
+                                                        <div class="preloader__progress-bar"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `;
+                                        body.insertAdjacentHTML('afterbegin', preloaderHTML);
+                                        body.classList.add('loading');
+                                        body.classList.remove('loaded');
+                                    }
+                                }
+                                
+                                // Optional: Show preloader for heavy content loading
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    // Add preloader for modal openings
+                                    const modalTriggers = document.querySelectorAll('.work__cover--open--button');
+                                    modalTriggers.forEach(trigger => {
+                                        trigger.addEventListener('click', function() {
+                                            // Brief preloader for modal content
+                                            const modal = this.closest('section').nextElementSibling;
+                                            if (modal && modal.classList.contains('modal')) {
+                                                showPreloader();
+                                                setTimeout(() => {
+                                                    const preloader = document.querySelector('.preloader');
+                                                    if (preloader) {
+                                                        preloader.classList.add('fade-out');
+                                                        document.body.classList.remove('loading');
+                                                        document.body.classList.add('loaded');
+                                                        setTimeout(() => {
+                                                            if (preloader.parentNode) {
+                                                                preloader.parentNode.removeChild(preloader);
+                                                            }
+                                                        }, 500);
+                                                    }
+                                                }, 800);
+                                            }
+                                        });
+                                    });
+                                });
+                            </script>
 </body>
 
 </html>
