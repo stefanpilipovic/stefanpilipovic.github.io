@@ -29,7 +29,7 @@ function openModal(modalElement) {
     currentModalContent.scrollTop = 0;
     
     // Reset scroll position of any browser preview content
-    const browserContents = currentModalContent.querySelectorAll('.browser__content');
+    const browserContents = currentModalContent.querySelectorAll('.browser__dark--content');
     browserContents.forEach(function(browserContent) {
       browserContent.scrollTop = 0;
     });
@@ -83,7 +83,7 @@ function closeModal() {
     currentModalContent.scrollTop = 0;
     
     // Reset scroll position of any browser preview content
-    const browserContents = currentModalContent.querySelectorAll('.browser__content');
+    const browserContents = currentModalContent.querySelectorAll('.browser__dark--content');
     browserContents.forEach(function(browserContent) {
       browserContent.scrollTop = 0;
     });
@@ -112,7 +112,7 @@ function closeModal() {
       currentModalContent.scrollTop = 0;
       
       // Reset scroll position of any browser preview content again
-      const browserContents = currentModalContent.querySelectorAll('.browser__content');
+      const browserContents = currentModalContent.querySelectorAll('.browser__dark--content');
       browserContents.forEach(function(browserContent) {
         browserContent.scrollTop = 0;
       });

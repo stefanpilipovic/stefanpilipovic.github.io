@@ -1,6 +1,6 @@
-/* BROWSER START */
+/* BROWSER DARK START */
 
-.browser {
+.browser__dark {
     max-width: 900px;
     width: 100%;
     display: flex;
@@ -10,7 +10,7 @@
     box-sizing: border-box;
 }
 
-.browser__header {
+.browser__dark--header {
     display: flex;
     align-items: center;
     height: 24px;
@@ -23,7 +23,7 @@
     position: relative;
 }
 
-.browser__header--title {
+.browser__dark--header--title {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -33,7 +33,7 @@
     text-align: center;
 }
 
-.browser__header--control {
+.browser__dark--header--control {
     height: 12px;
     width: 12px;
     border-radius: 50%;
@@ -41,26 +41,26 @@
     box-sizing: border-box;
 }
 
-.browser__header--control:first-child {
+.browser__dark--header--control:first-child {
     margin-left: 14px;
 }
 
-.browser__header--control--close {
+.browser__dark--header--control--close {
     background-color: #FF6058;
     border: 1px solid #E14942;
 }
 
-.browser__header--control--minimize {
+.browser__dark--header--control--minimize {
     background-color: #FFC130;
     border: 1px solid #E1A325;
 }
 
-.browser__header--control--expand {
+.browser__dark--header--control--expand {
     background-color: #27CA40;
     border: 1px solid #3EAF3F;
 }
 
-.browser__content {
+.browser__dark--content {
     width: 100%;
     border: #1b1c1e 1px solid;
     border-radius: 0 0 0.5rem 0.5rem;
@@ -72,16 +72,104 @@
 }
 
 /* Ensure slides inside browser have proper border radius */
-.browser__content .slideshow__slide {
+.browser__dark--content .slideshow__slide {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 
-.browser__content--img {
+.browser__dark--content--img {
     width: 100%;
     height: auto;
     display: block;
     margin-top: -4px;
 }
 
-/* BROWSER END */
+/* BROWSER DARK END */
+
+/* BROWSER LIGHT START */
+
+.browser__light {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 64px auto 0;
+    box-sizing: border-box;
+}
+
+.browser__light--header {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    background-color: #e9e9e9;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-sizing: border-box;
+    border: #e2e2e2 1px solid;
+    width: 100%;
+    position: relative;
+}
+
+.browser__light--header--title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #767676;
+    font-size: 10px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.browser__light--header--control {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-left: 8px;
+    box-sizing: border-box;
+}
+
+.browser__light--header--control:first-child {
+    margin-left: 14px;
+}
+
+.browser__light--header--control--close {
+    background-color: #FF6058;
+    border: 1px solid #E14942;
+}
+
+.browser__light--header--control--minimize {
+    background-color: #FFC130;
+    border: 1px solid #E1A325;
+}
+
+.browser__light--header--control--expand {
+    background-color: #27CA40;
+    border: 1px solid #3EAF3F;
+}
+
+.browser__light--content {
+    width: 100%;
+    border: #e2e2e2 1px solid;
+    border-radius: 0 0 0.5rem 0.5rem;
+    margin-top: -1px;
+    box-sizing: border-box;
+    padding: 0;
+    max-height: 610px;
+    overflow-y: auto;
+}
+
+/* Ensure slides inside browser have proper border radius */
+.browser__light--content .slideshow__slide {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.browser__light--content--img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: -4px;
+}
+
+/* BROWSER LIGHT END */
