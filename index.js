@@ -16,15 +16,8 @@ function hideVideoControls() {
   });
 }
 
-// index.js or main script
-window.addEventListener('load', function() {
-    document.querySelector('.preloader').style.display = 'none';
-    document.body.classList.remove('loading');
-});
-
 
 document.addEventListener('DOMContentLoaded', function () {
   hideVideoControls();
   initSlideshow();
 });
-
