@@ -222,3 +222,34 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 });
+
+
+function openModal() {
+    const modal = document.querySelector('.modal');
+    const loader = modal.querySelector('.modal__loader');
+    const content = modal.querySelector('.modal__content');
+
+    modal.style.display = 'block';
+    loader.style.display = 'flex';
+    content.style.display = 'none';
+
+    // Simulate "loading"
+    setTimeout(() => {
+        loader.style.display = 'none';
+        content.style.display = 'block';
+
+        // Lazy-load videos inside modal
+        const videos = modal.querySelectorAll('video');
+        videos.forEach(video => {
+            if (video.readyState === 0) {
+                video.load();
+            }
+            video.play();
+        });
+
+    }, 1000); // Adjust to your actual content loading time
+}
+
+// Hook this to your open button:
+document.querySelector('.work__cover--open--button').addEventListener('click', openModal);
+
