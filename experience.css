@@ -1,0 +1,145 @@
+/* EXPERIENCE START */
+
+.experience__title {
+    margin-top: 120px;
+    font-size: 40px;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.experience__item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0;
+    justify-content: space-between;
+}
+
+.experience__item--left--side {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.experience__item--logo {
+    width: 48px;
+    height: 48px;
+}
+
+.experience__company--name--wrapper {
+    margin-left: 24px;
+}
+
+.experience__company--name {
+    font-size: 20px;
+    line-height: 140%;
+    color: #000000;
+    display: block;
+}
+
+.experience__company--sector {
+    font-size: 20px;
+    line-height: 140%;
+    color: #767676;
+}
+
+.experience__location {
+    text-align: center;
+    font-size: 20px;
+    line-height: 140%;
+    color: #000000;
+    width: 50%;
+}
+
+.experience__duration {
+    text-align: right;
+    font-size: 20px;
+    line-height: 140%;
+    color: #767676;
+    letter-spacing: -0.5px;
+    width: 30%;
+}
+
+.experience__divider {
+    height: 1px;
+    background-color: #767676;
+    opacity: 0.3;
+    width: calc(100% - 72px);
+    margin-left: auto;
+}
+
+@media (max-width: 1230px) {
+    .experience__title {
+        font-size: 32px;
+        margin-bottom: 24px;
+        margin-top: 64px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .experience__duration {
+        max-width: 120px;
+    }
+
+    .experience__item--left--side {
+        width: 50%;
+    }
+
+        .experience__company--name--wrapper {
+        margin-left: 16px;
+    }
+    
+
+}
+
+@media (max-width: 800px) {
+
+    .experience__company--name,
+    .experience__company--sector,
+    .experience__location,
+    .experience__duration {
+        font-size: 16px;
+    }
+
+    .experience__duration {
+        max-width: 1000px;
+    }
+
+    .ibm__logo {
+        width: 15%;
+    }
+
+    .experience__title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .experience__item {
+        padding: 12px 0;
+    }
+}
+
+
+@media (max-width: 720px) {}
+
+@media (max-width: 560px) {
+    .experience__location {
+        display: none;
+    }
+
+    .experience__item--left--side {
+        width: 100%;
+    }
+
+    .experience__duration {
+        width: 50%;
+    }
+}
+
+@media (max-width: 450px) {
+    .experience__duration {
+        width: 30%;
+    }
+}
+
+/* EXPERIENCE END */

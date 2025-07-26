@@ -1,0 +1,123 @@
+.accordion {
+    width: 100%;
+    margin: 24px auto;
+    /* background-color: #F6F6F6; */
+    margin-top: 24px;
+    border-radius: 28px;
+    /* box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25); */
+    border: #e4e4e4 1px solid;
+}
+
+.accordion:hover {
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.05);
+    background-color: #f4f9ff;
+    border: #0071E3 1px solid;
+}
+
+.accordion__header {
+    padding: 16px;
+    min-height: 48px;
+    line-height: 150%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+}
+
+.accordion__header--title {
+    display: block;
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+    line-height: 140%;
+    color: #767676;
+    padding: 0 16px;
+}
+
+.accordion__header--icon {
+    display: inline-block;
+    /* Ensures the element can be transformed */
+    width: 40px;
+    height: 40px;
+    /* Fixed width to prevent layout shifts */
+    background-color: #0071E3;
+    border-radius: 50%;
+    padding: 12px;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+    /* Animate all properties including transform */
+}
+
+.accordion__header.active .accordion__header--icon {
+    transform: rotate(45deg);
+    /* Rotate to make it look like an "x" */
+    background-color: #767676;
+}
+
+.accordion__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    cursor: pointer;
+}
+
+.accordion__body--content {
+    display: flex;
+    max-width: 720px;
+    margin: 0 auto;
+    flex-direction: column;
+    padding: 44px 44px 64px 44px;
+    line-height: 150%;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, transparent, #dedede, transparent) 1;
+}
+
+.accordion__body--content--heading {
+    font-size: 20px;
+    color: #767676;
+    font-weight: 600;
+    line-height: 120%;
+    margin: 16px 0;
+}
+
+.accordion__body--content--title {
+    font-size: 32px;
+    color: #000;
+    font-weight: 600;
+    line-height: 130%;
+    margin-bottom: 48px;
+}
+
+.accordion__body--content--text {
+    font-size: 20px;
+    color: #767676;
+    line-height: 140%;
+}
+
+.accordion__body--content--text--highlight {
+    font-size: 20px;
+    color: #000;
+    font-weight: 600;
+    line-height: 140%;
+}
+
+ul {
+    list-style-position: outside;
+    padding-inline-start: 36px;
+    list-style-type: disc;
+}
+
+li {
+    margin: 4px 0;
+}
+
+li::marker {
+    color: #000;
+}
+
+@media(max-width:767px) {
+    html {
+        font-size: 14px;
+    }
+}
