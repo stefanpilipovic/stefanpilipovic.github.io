@@ -58,9 +58,7 @@ modalTriggers.forEach((trigger, index) => {
             .then(html => {
                 modalCache[id] = html;
                 insertModalContent(modalContent, html);
-                return waitForMediaLoad(modalContent);
-            })
-            .then(() => {
+                // Hide loader immediately after content insertion, let media load in background
                 modalLoader.classList.remove("visible");
                 modalLoader.classList.add("hidden");
             })
@@ -80,9 +78,14 @@ function insertModalContent(modalContent, html) {
 function waitForMediaLoad(container) {
     const mediaElements = container.querySelectorAll("img, video");
 
+    // If no media elements, resolve immediately
+    if (mediaElements.length === 0) {
+        return Promise.resolve();
+    }
+
     const promises = Array.from(mediaElements).map(el => {
         return new Promise(resolve => {
-            const timeout = setTimeout(resolve, 5000);
+            const timeout = setTimeout(resolve, 2000); // Reduced to 2 seconds
 
             const cleanup = () => {
                 clearTimeout(timeout);

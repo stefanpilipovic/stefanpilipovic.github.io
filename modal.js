@@ -1,6 +1,5 @@
 // Variables to store original body state
 let scrollPosition = 0;
-let bodyPaddingRight = "";
 let currentModal = null;
 let currentModalContent = null;
 
@@ -17,9 +16,6 @@ function openModal(modalElement) {
   
   // Save current scroll position
   scrollPosition = window.pageYOffset;
-  
-  // Save current body padding
-  bodyPaddingRight = document.body.style.paddingRight;
   
   // Disable background scrolling
   document.body.classList.add('modal-open');
@@ -99,9 +95,6 @@ function closeModal() {
     
     // Re-enable background scrolling
     document.body.classList.remove('modal-open');
-    
-    // Restore original body padding
-    document.body.style.paddingRight = bodyPaddingRight;
     
     // Restore scroll position
     window.scrollTo(0, scrollPosition);

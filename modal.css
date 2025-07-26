@@ -1,7 +1,6 @@
 /* Disable body scrolling when modal is open */
 body.modal-open {
   overflow: hidden;
-  /* Don't add padding - we'll handle scrollbar compensation in JS */
 }
 
 /* The Modal (background) */
