@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="slideshow.css">
     <link rel="stylesheet" href="modal.css">
     <link rel="stylesheet" href="accordion.css">
+    <link rel="stylesheet" href="preloader.css">
     <link rel="icon" type="image/webp+xml" href="assets/favicon.svg">
 </head>
 
@@ -34,15 +35,10 @@
     gtag('config', 'G-XB05ZPTBJV');
 </script>
 
-<body class="loading">
+<body>
     <!-- Preloader -->
-    <div class="preloader">
-        <div class="preloader__content">
-            <div class="preloader__spinner"></div>
-            <div class="preloader__progress">
-                <div class="preloader__progress-bar"></div>
-            </div>
-        </div>
+    <div id="preloader" class="preloader">
+        <div class="preloader__spinner"></div>
     </div>
 
     <nav class="navigation">
@@ -54,13 +50,12 @@
         <div class="navigation__links--wrapper--right">
             <a href="https://www.linkedin.com/in/spilipovic/" target="_blank" class="navigation__link"><span
                     class="symbol">&#x1F855;</span> Linkedin</a>
-            <a href="https://docs.google.com/document/d/1MdBx4TzEafS5mmMBfirwtz_XHtVTOTtelEXTBINYnsQ/edit?usp=sharing" target="_blank" class="navigation__link"><span
-                    class="symbol">&#129107;</span> Resume</a>
+            <a href="https://docs.google.com/document/d/1MdBx4TzEafS5mmMBfirwtz_XHtVTOTtelEXTBINYnsQ/edit?usp=sharing"
+                target="_blank" class="navigation__link"><span class="symbol">&#129107;</span> Resume</a>
             <a href="mailto:stefan.pilipovic@gmail.com" class="navigation__link"><span class="symbol">&#11194;</span>
                 Email</a>
         </div>
     </nav>
-
 
     <h1 class="heading">Stefan Pilipović is a product designer crafting human-centered digital experiences since 2010.
         Based in
@@ -150,8 +145,8 @@
                     </a>
                 </div>
                 <div class="experience__company--name--wrapper">
-                    <span class="experience__company--name">ReaQta (acquired by <img src="assets/ibm-logo.svg" alt="IBM Logo"
-                            class="ibm__logo">)</span>
+                    <span class="experience__company--name">ReaQta (acquired by <img src="assets/ibm-logo.svg"
+                            alt="IBM Logo" class="ibm__logo">)</span>
                     <span class="experience__company--sector">Cybersecurity • B2B</span>
                 </div>
             </div>
@@ -279,14 +274,7 @@
             Work
         </h2>
 
-        <!-- One cover
-        <div class="work__cover" style="background: linear-gradient(to bottom right, #FF6263, #7f0606);">
-            <video class="work__cover--media" playsinline preload="auto" autoplay muted loop>
-                <source src="assets/renofi/renofi_video_1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video> -->
-
-        <div class="work__cover" style="background: linear-gradient(to bottom right, #FF6263, #7f0606);">
+        <div data-project-id="renofi" class="work__cover" style="background: linear-gradient(to bottom right, #FF6263, #7f0606);">
 
             <div class="work__cover--media--wrapper">
                 <video class="work__cover--media work__cover--media--left" playsinline preload="auto" autoplay muted
@@ -319,6 +307,10 @@
 
         <section class="modal">
             <div class="modal__content">
+                <div class="modal__loader">
+                    <div class="modal__spinner"></div>
+                </div>
+                
                 <div class="modal__pull--bar">
                     <div class="modal__pull--indicator"></div>
                 </div>
@@ -415,7 +407,8 @@
                 </div>
 
                 <span class="work__project--caption">
-                    Crafted <span class="work__project--caption--highlight">gamified milestone elements</span> which <span class="work__project--caption--highlight">increased
+                    Crafted <span class="work__project--caption--highlight">gamified milestone elements</span> which
+                    <span class="work__project--caption--highlight">increased
                         user
                         engagement and completion rates</span>
                 </span>
@@ -726,7 +719,8 @@
                                                 team</span>
                                             Operations team to understand hand-off experience, and identify gaps.</li>
                                         <li><span class="accordion__body--content--text--highlight">Engineering &
-                                                QA</span> to ensure project feasibility, identify potential obstacles, and validate
+                                                QA</span> to ensure project feasibility, identify potential obstacles,
+                                            and validate
                                             iterations through structured testing at every design iteration.</li>
                                         <li><span class="accordion__body--content--text--highlight">Design Team</span>
                                             to review and refine UI/UX decisions.</li>
@@ -851,12 +845,12 @@
         </section>
 
         <!-- WORK RENOFI END ----------------------------------------------------------------------------------------------------------------------------------------------->
-         
+
         <!-- WORK REAQTA START ----------------------------------------------------------------------------------------------------------------------------------------------->
 
         <section>
 
-            <div class="work__cover" style="background: linear-gradient(to bottom right, #0F7A9F, #002662);">
+            <div data-project-id="reaqta" class="work__cover" style="background: linear-gradient(to bottom right, #0F7A9F, #002662);">
 
                 <div class="work__cover--media--wrapper">
                     <video class="work__cover--media work__cover--media--left" playsinline preload="auto" autoplay muted
@@ -890,6 +884,10 @@
 
             <section class="modal">
                 <div class="modal__content">
+                    <div class="modal__loader">
+                        <div class="modal__spinner"></div>
+                    </div>
+                    
                     <div class="modal__pull--bar">
                         <div class="modal__pull--indicator"></div>
                     </div>
@@ -1150,7 +1148,7 @@
 
             <section>
 
-                <div class="work__cover" style="background: linear-gradient(to bottom right, #FF8700, #FF3B00);">
+                <div data-project-id="element451" class="work__cover" style="background: linear-gradient(to bottom right, #FF8700, #FF3B00);">
 
                     <div class="work__cover--media--wrapper">
 
@@ -1183,6 +1181,10 @@
 
                 <section class="modal">
                     <div class="modal__content">
+                        <div class="modal__loader">
+                            <div class="modal__spinner"></div>
+                        </div>
+                        
                         <div class="modal__pull--bar">
                             <div class="modal__pull--indicator"></div>
                         </div>
@@ -1901,7 +1903,7 @@
 
                 <section>
 
-                    <div class="work__cover" style="background: linear-gradient(to bottom right, #824fa0, #000d2c);">
+                    <div data-project-id="aic" class="work__cover" style="background: linear-gradient(to bottom right, #824fa0, #000d2c);">
 
                         <div class="work__cover--media--wrapper">
                             <img src="assets/aic/aic_website_4.webp" alt="AIC website contact page design"
@@ -1930,6 +1932,10 @@
 
                     <section class="modal">
                         <div class="modal__content">
+                            <div class="modal__loader">
+                                <div class="modal__spinner"></div>
+                            </div>
+                            
                             <div class="modal__pull--bar">
                                 <div class="modal__pull--indicator"></div>
                             </div>
@@ -2076,7 +2082,7 @@
 
                     <!-- WORK WATCHTOWR START ----------------------------------------------------------------------------------------------------------------------------------------------->
 
-                    <div class="work__cover" style="background: linear-gradient(to bottom right, #396D94, #1E015B);">
+                    <div data-project-id="watchtowr" class="work__cover" style="background: linear-gradient(to bottom right, #396D94, #1E015B);">
 
                         <div class="work__cover--media--wrapper">
                             <video class="work__cover--media work__cover--media--left" playsinline preload="auto"
@@ -2107,6 +2113,10 @@
 
                     <section class="modal">
                         <div class="modal__content">
+                            <div class="modal__loader">
+                                <div class="modal__spinner"></div>
+                            </div>
+                            
                             <div class="modal__pull--bar">
                                 <div class="modal__pull--indicator"></div>
                             </div>
@@ -2380,7 +2390,7 @@
 
                     <section>
 
-                        <div class="work__cover"
+                        <div data-project-id="serena williams" class="work__cover"
                             style="background: linear-gradient(to bottom right, #ffd874, #bb8b0f);">
 
                             <div class="work__cover--media--wrapper">
@@ -2418,8 +2428,11 @@
                         </div>
 
                         <section class="modal">
-
                             <div class="modal__content">
+                                <div class="modal__loader">
+                                    <div class="modal__spinner"></div>
+                                </div>
+                                
                                 <div class="modal__pull--bar">
                                     <div class="modal__pull--indicator"></div>
                                 </div>
@@ -2525,7 +2538,7 @@
 
                         <section>
 
-                            <div class="work__cover"
+                            <div data-project-id="exodus" class="work__cover"
                                 style="background: linear-gradient(to bottom right, #53C1D6, rgb(0, 95, 142));">
 
                                 <div class="work__cover--media--wrapper">
@@ -2560,8 +2573,11 @@
                             </div>
 
                             <section class="modal">
-
                                 <div class="modal__content">
+                                    <div class="modal__loader">
+                                        <div class="modal__spinner"></div>
+                                    </div>
+                                    
                                     <div class="modal__pull--bar">
                                         <div class="modal__pull--indicator"></div>
                                     </div>
@@ -2736,7 +2752,8 @@
                             <!-- WORK EXODUS END ----------------------------------------------------------------------------------------------------------------------------------------------->
 
                             <div>
-                                <span style="font-size: 12px; font-weight: 500; color: #999; text-align: center; display: block; margin: 20px 0;">
+                                <span
+                                    style="font-size: 12px; font-weight: 500; color: #999; text-align: center; display: block; margin: 20px 0;">
                                     All rights reserved 2025.
                             </div>
 
@@ -2744,6 +2761,7 @@
                             <script src="./index.js"></script>
                             <script src="./modal.js"></script>
                             <script src="./accordion.js"></script>
+                            <script src="./preloader.js"></script>
 
 </body>
 
