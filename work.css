@@ -37,6 +37,12 @@
     overflow: hidden;
     cursor: pointer;
     margin-bottom: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work__cover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px 0 rgba(0, 0, 0, 0.25);
 }
 
 
@@ -107,6 +113,11 @@
     background-color: #0071E3;
     padding: 16px;
     z-index: 5;
+    transition: transform 0.3s ease;
+}
+
+.work__cover:hover .work__cover--open--button {
+    transform: scale(1.15);
 }
 
 
