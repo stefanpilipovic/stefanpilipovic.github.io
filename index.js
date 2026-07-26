@@ -45,8 +45,47 @@ function initLazyVideos() {
 }
 
 
+// Project modals are display:none until opened, so the IntersectionObserver
+// above never triggers for the videos inside them - they'd otherwise only
+// start loading the moment a visitor opens a project. Once the homepage's
+// visible videos have had a chance to load, fetch the modal videos one at a
+// time in the background (in page order) so projects are ready by the time
+// they're opened.
+function backgroundPreloadModalVideos() {
+  const queue = Array.from(document.querySelectorAll('.modal video')).filter(function (video) {
+      return video.readyState === 0;
+  });
+
+  function loadNext() {
+      const video = queue.shift();
+      if (!video) return;
+
+      function proceed() {
+          video.removeEventListener('loadeddata', proceed);
+          video.removeEventListener('error', proceed);
+          loadNext();
+      }
+
+      video.addEventListener('loadeddata', proceed, { once: true });
+      video.addEventListener('error', proceed, { once: true });
+      video.preload = 'auto';
+      video.load();
+  }
+
+  loadNext();
+}
+
+
 document.addEventListener('DOMContentLoaded', function () {
   hideVideoControls();
   initSlideshow();
   initLazyVideos();
+
+  window.addEventListener('load', function () {
+      if ('requestIdleCallback' in window) {
+          requestIdleCallback(backgroundPreloadModalVideos, { timeout: 4000 });
+      } else {
+          setTimeout(backgroundPreloadModalVideos, 2000);
+      }
+  });
 });
