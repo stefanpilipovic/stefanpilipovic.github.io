@@ -17,8 +17,16 @@ function hideVideoControls() {
 
 // Only load/play videos once they're near the viewport, and pause them
 // when scrolled away, instead of every video autoplaying/downloading on page load.
+// Shows a skeleton shimmer on each video until it has enough data to render a frame.
 function initLazyVideos() {
   const videos = document.querySelectorAll('video');
+
+  videos.forEach(function (video) {
+      video.classList.add('video-loading');
+      video.addEventListener('loadeddata', function () {
+          video.classList.remove('video-loading');
+      });
+  });
 
   const observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -29,7 +37,7 @@ function initLazyVideos() {
               video.pause();
           }
       });
-  }, { threshold: 0.1, rootMargin: '200px 0px' });
+  }, { threshold: 0.1, rootMargin: '600px 0px' });
 
   videos.forEach(function (video) {
       observer.observe(video);
